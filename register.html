@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+     <link rel="stylesheet" type="text/css" href="reg.css">
+</head>
+<body><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-283337298" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-343470844" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-562130995" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-349964798" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-636478001" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-855638399" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-78258088" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-448232858" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-706012585" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-117135150" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-901405252" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-634167951" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-138080645" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-15812816" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-619951096" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-885153230" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-72539977" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-718598756" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-513818130" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-639808531" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-392174633" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-471526950" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-720935421" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-403082567" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-334023182" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-35661009" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-253193153" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-580569131" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-215275631" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-994434638" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-456232039" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-771562017" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-305890440" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-75072598" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-337625151" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-85405268" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-761995017" data-added-by-two-seven="1">(function() {
+        
+      const modal = document.querySelector('.twoseven-ext-tab-media-modal')
+      const modalCloseBtn = modal.querySelector('.close')
+      function closeModal () {
+        modal.style.display = 'none'
+        const frame = document.querySelector('#twoseven-ext-tab-media-iframe').contentWindow
+        frame.postMessage({
+          __evt_name: 'modal-hide'
+        }, '*')
+      }
+      modalCloseBtn.onclick = closeModal
+
+      window.onmessage = function (e) {
+        if (e.data.__evt_name === 'modal-hide') {
+          closeModal()
+        }
+      }
+
+      window.twoseven.closeTabMediaModal = closeModal
+
+      window.onclick = function (e) {
+        if (e.target.id === 'twoseven-ext-tab-media-modal' && modal.style.display === 'block') {
+            closeModal()
+        }
+      }
+    ;
+      })();</script></div><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="icon" href="https://mahametrorail.etenders.in/img/favicon.ico" type="image/gif">
+    <title>MAHAMETRORAIL e-Procurement</title>
+    <meta name="description" content="Next generation procurement"><meta name="keywords" content="procurement, e-tendering, NexTenders, Next generation procurement, e-auction , e-Auction">
+     
+
+  <link rel="stylesheet" type="text/css" href="./MAHAMETRORAIL e-Procurement_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./MAHAMETRORAIL e-Procurement_files/ddmenu.css">
+
+  <style type="text/css">@import url(/css/jquery-ui-1.7.2.custom.css);</style>
+
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery-1.7.2.min.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/bar.js.download"></script>
+
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery.img.preload.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery.filestyle.mini.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery.wysiwyg.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery.date_input.pack.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery.select_skin.js.download"></script>
+
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery-ui.min.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery-ui-timepicker-addon.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery-ui-sliderAccess.js.download"></script>
+    
+    <style>
+    .noscript_css
+    {
+      background: none repeat scroll 0 0 #333333;
+        border-bottom: 1px solid #666666;
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        font-size: 11px;   
+    }
+    .noscript_css p
+    {
+      margin: 0 auto;
+        padding: 2px 5px;
+        text-align: left;
+        color:#fff;
+    }
+    #hld { 
+      min-height: 450px;
+  }
+  .container_div{
+  
+background:#ffffff;
+ -webkit-border-radius:  5px;
+  -moz-border-radius:     5px;
+  border-radius:          5px;
+}
+ 
+  </style>
+  
+  <script language="JavaScript" type="text/javascript">
+    var site_url = 'https://mahametrorail.etenders.in';
+    /*
+    var message="Right Click Disabled!";
+  
+    function clickIE4(){
+      if (event.button==2){
+      return false;
+      }
+    }
+  
+    function clickNS4(e){
+      if (document.layers||document.getElementById&&!document.all){
+        if (e.which==2||e.which==3){
+          return false;
+        }
+      }
+    }
+  
+    if (document.layers){
+      document.captureEvents(Event.MOUSEDOWN);
+      document.onmousedown=clickNS4;
+    }
+    else if (document.all&&!document.getElementById){
+      document.onmousedown=clickIE4;
+    }
+
+    document.oncontextmenu=new Function("alert(message);return false")
+
+  
+  
+    var site_url = 'https://mahametrorail.etenders.in';
+    var surl = site_url+'/indexes/search_results___';   
+    
+    $(document).ready(function()
+    { 
+      /// $('#scrollbar1').tinyscrollbar(); 
+    });
+    
+    $(document).ready(function(){
+      // $('#scrollbar2').tinyscrollbar();
+      // $('#scrollbar3').tinyscrollbar();  
+    });
+     
+    function searchresult(surl,frm,bank)
+    {
+        if(frm=='')
+        {
+      $("#search_data").html('<img src="'+site_url+'/img/ajax-loader-search.gif" alt="Loading..." style="padding:40px 0px 0px 230px" />');
+      $.ajax({
+                type: "POST",
+                url: surl,
+                data:'bank='+bank,
+                success: function(response){
+                    $("#search_data").html(response);
+                }
+        });
+        }
+        else{
+      $("#search_data").html('<img src="'+site_url+'/img/ajax-loader-search.gif" alt="Loading..." style="padding:40px 0px 0px 230px"/>');
+          $.ajax({
+                type: "POST",
+                data:'bank='+bank+'&'+$('#frmSearch').serialize(),
+                url: surl,
+                success: function(response){
+                    $("#search_data").html(response);
+                }
+         });
+        }
+    }
+    */
+  </script>
+<link href="chrome-extension://cjdnfmjmdligcpfcekfmenlhiopehjkd/web_resources/modal/modal.css" rel="stylesheet" id="__tmpStyle"><style type="text/css">button.btn[data-v-5f0b9ba1]{display:inline-block;font-weight:300;line-height:1.25;text-align:center;white-space:nowrap;vertical-align:middle;user-select:none;border:1px solid transparent;cursor:pointer;letter-spacing:1px;transition:all .15s ease}button.btn.btn-sm[data-v-5f0b9ba1]{padding:.4rem .8rem;font-size:.8rem;border-radius:.2rem}button.btn.btn-primary[data-v-5f0b9ba1]{color:#fff;background-color:#45C8F1;border-color:#45C8F1}button.btn.btn-outline-primary[data-v-5f0b9ba1]{color:#45C8F1;background-color:transparent;border-color:#45C8F1}button.btn.btn-danger[data-v-5f0b9ba1]{color:#fff;background-color:#FF4949;border-color:#FF4949}.text-muted[data-v-5f0b9ba1]{color:#8492A6}.text-center[data-v-5f0b9ba1]{text-align:center}.drop-down-enter[data-v-5f0b9ba1],.drop-down-leave-to[data-v-5f0b9ba1]{transform:translateX(0) translateY(-20px);transition-timing-function:cubic-bezier(0.74, 0.04, 0.26, 1.05);opacity:0}.drop-down-enter-active[data-v-5f0b9ba1],.drop-down-leave-active[data-v-5f0b9ba1]{transition:all .15s}.move-left-enter[data-v-5f0b9ba1],.move-left-leave-to[data-v-5f0b9ba1]{transform:translateY(0) translateX(-80px);transition-timing-function:cubic-bezier(0.74, 0.04, 0.26, 1.05);opacity:0}.move-left-enter-active[data-v-5f0b9ba1],.move-left-leave-active[data-v-5f0b9ba1]{transition:all .15s}.no-tr[data-v-5f0b9ba1]{transition:none !important}.no-tr *[data-v-5f0b9ba1]{transition:none !important}.overlay[data-v-5f0b9ba1]{position:fixed;background:rgba(220,220,220,0.8);display:flex;align-items:center;justify-content:center;top:0;left:0;right:0;bottom:0;transition:all 0.2s ease;opacity:0;visibility:hidden}.overlay .modal[data-v-5f0b9ba1]{transition:all 0.2s ease;opacity:0;transform:scale(0.6);overflow:hidden}.overlay.show[data-v-5f0b9ba1]{opacity:1;visibility:visible}.overlay.show .modal[data-v-5f0b9ba1]{opacity:1;transform:scale(1)}.panel[data-v-5f0b9ba1]{padding:6px 10px;display:flex;width:100%;box-sizing:border-box;align-items:center;border-radius:4px;position:relative;border:1px solid #eaf7ff;background:#f7fcff;outline:none;transition:all 0.07s ease-in-out}.btn[data-v-5f0b9ba1]{cursor:pointer;box-sizing:border-box}.light-btn[data-v-5f0b9ba1]{padding:6px 10px;display:flex;width:100%;box-sizing:border-box;align-items:center;border-radius:4px;position:relative;border:1px solid #eaf7ff;background:#f7fcff;outline:none;cursor:pointer;transition:all 0.07s ease-in-out}.light-btn[data-v-5f0b9ba1]:hover{background:#e0f4ff;border-color:#8acfff}.shake[data-v-5f0b9ba1]{animation:shake-data-v-5f0b9ba1 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;transform:translate3d(0, 0, 0)}@keyframes shake-data-v-5f0b9ba1{10%,90%{transform:translate3d(-1px, 0, 0)}20%,80%{transform:translate3d(2px, 0, 0)}30%,50%,70%{transform:translate3d(-4px, 0, 0)}40%,60%{transform:translate3d(4px, 0, 0)}}.pulse[data-v-5f0b9ba1]{animation:pulse-data-v-5f0b9ba1 2s ease infinite}@keyframes pulse-data-v-5f0b9ba1{0%{opacity:.7}50%{opacity:.4}100%{opacity:.7}}.flash-once[data-v-5f0b9ba1]{animation:flash-once 3.5s ease 1}@keyframes fade-up-data-v-5f0b9ba1{0%{transform:translate3d(0, 10px, 0);opacity:0}100%{transform:translate3d(0, 0, 0);opacity:1}}.fade-in[data-v-5f0b9ba1]{animation:fade-in-data-v-5f0b9ba1 .3s ease-in-out}@keyframes fade-in-data-v-5f0b9ba1{0%{opacity:0}100%{opacity:1}}.spin[data-v-5f0b9ba1]{animation-name:spin-data-v-5f0b9ba1;animation-duration:2000ms;animation-iteration-count:infinite;animation-timing-function:linear}@keyframes spin-data-v-5f0b9ba1{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.bounceIn[data-v-5f0b9ba1]{animation-name:bounceIn-data-v-5f0b9ba1;transform-origin:center bottom;animation-duration:1s;animation-fill-mode:both;animation-iteration-count:1}@keyframes bounceIn-data-v-5f0b9ba1{0%,20%,40%,60%,80%,100%{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:1;-webkit-transform:scale3d(0.8, 0.8, 0.8);transform:scale3d(0.8, 0.8, 0.8)}20%{-webkit-transform:scale3d(1.1, 1.1, 1.1);transform:scale3d(1.1, 1.1, 1.1)}40%{-webkit-transform:scale3d(0.9, 0.9, 0.9);transform:scale3d(0.9, 0.9, 0.9)}60%{opacity:1;-webkit-transform:scale3d(1.03, 1.03, 1.03);transform:scale3d(1.03, 1.03, 1.03)}80%{-webkit-transform:scale3d(0.97, 0.97, 0.97);transform:scale3d(0.97, 0.97, 0.97)}100%{opacity:1;-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}}@keyframes dots-data-v-5f0b9ba1{0%,20%{color:rgba(0,0,0,0);text-shadow:0.25em 0 0 rgba(0,0,0,0),0.5em 0 0 rgba(0,0,0,0)}40%{color:#8492A6;text-shadow:0.25em 0 0 rgba(0,0,0,0),0.5em 0 0 rgba(0,0,0,0)}60%{text-shadow:0.25em 0 0 #8492A6,0.5em 0 0 rgba(0,0,0,0)}80%,100%{text-shadow:.25em 0 0 #8492A6, .5em 0 0 #8492A6}}@keyframes recording-data-v-5f0b9ba1{0%{box-shadow:0px 0px 5px 0px rgba(173,0,0,0.3)}65%{box-shadow:0px 0px 5px 5px rgba(173,0,0,0.3)}90%{box-shadow:0px 0px 5px 5px rgba(173,0,0,0)}}body[data-v-5f0b9ba1]{margin:0;font-size:100%;color:#3C4858}a[data-v-5f0b9ba1]{text-decoration:none;color:#45C8F1}h1[data-v-5f0b9ba1],h2[data-v-5f0b9ba1],h3[data-v-5f0b9ba1],h4[data-v-5f0b9ba1]{margin-top:0}svg[data-v-5f0b9ba1]{outline:none}.container_selected_area[data-v-5f0b9ba1]{display:none;visibility:hidden;padding:0;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2147483647}.container_selected_area.active[data-v-5f0b9ba1]{visibility:visible;display:block}.container_selected_area .label[data-v-5f0b9ba1]{font-family:"Didact Gothic Regular",sans-serif;font-size:22px;text-align:center;padding-top:15px}.container_selected_area .area[data-v-5f0b9ba1]{display:none;position:fixed;z-index:2147483647;border:1px solid #1e83ff;background:rgba(30,131,255,0.1);box-sizing:border-box}.container_selected_area .area.active[data-v-5f0b9ba1]{display:block;top:0;left:0}.hide[data-v-5f0b9ba1]{display:none}
+</style>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <div class="noscript_css">
+               <p>JavaScript is disabled on your browser.Please enable JavaScript to get full benifit  of e-Tenders.</p>
+    </div>
+  </noscript>
+ <div id="hld">  
+    <!-- container start -->
+   <div id="container">  <style>
+#header .dd_menu {
+    background: #FFA343 none repeat scroll 0 0;
+    border: 1px solid #FFA343;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 35px;
+    list-style-type: none;
+    margin: 5px 0 15px;
+    padding: 0;
+    width: 100%;
+    z-index: 2;
+}
+#header .dd_menu li:hover ul 
+{ 
+  left:0px; 
+  top:35px;
+  background:#92C05D;
+  /*border: 1px solid #ccc;*/
+  padding:3px; z-index:2; 
+  cursor:pointer;
+}
+</style>
+<div id="header">
+<div id="header_logo">
+  <a href="https://mahametrorail.etenders.in/">
+    
+  </a> 
+</div>
+<script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/clock.js.download"></script>      
+<script type="text/javascript">
+
+/* <!-- set up variables used to init clock in BODY's onLoad handler; should be done as early as possible */
+var clockLocalStartTime = new Date();
+var dt = '2022/03/08 18:18:02';
+var clockServerStartTime = new Date(Date.parse(dt,"Y/m/d H:i:s"));
+
+ $(window).load(
+  function()
+    { 
+    
+  clockInit(clockLocalStartTime, clockServerStartTime);
+  clockOnLoad();
+});
+
+
+
+
+
+$(document).ready(function()
+{ 
+  $('#only_certificate').bind('change', function ()
+  {
+      if ($(this).is(':checked'))
+      {
+       $('#password').attr('disabled',true);
+       $('#password').css('background-color','#C8BBBE');
+       $('#password').val('');
+    }
+      else{
+        $('#password').attr('disabled',false);
+        $('#password').css('background-color','#FFFFFF');
+      }
+    });  
+    $(".login_box").show(); 
+    $(".login_box_show_hide").show(); 
+});
+
+  </script> 
+ 
+
+<div style="float:right; padding-bottom:0px;"> 
+<div style="float:right;  padding-bottom:0px;">
+</div>
+  <div class="login_box_empty"></div>
+  </div> 
+ 
+  
+<ul class="dd_menu">
+    <li><a href="https://mahametrorail.etenders.in/">Home</a></li>
+    
+ 
+  <li class="li_center"><a href="https://mahametrorail.etenders.in/indexes/signup#" target="_blank" class="">Help manual and tutorials</a>
+      
+  </li>
+  <li class="li_center"><a href="https://mahametrorail.etenders.in/indexes/signup#" class="">Digital Signature Forms</a>
+      
+  </li>
+  <!--li class="li_center"><a href="#" class="">Digital Certificate</a>
+    <ul>
+      <li class="li_left"><a href="#" class="">Department</a>
+         
+          <ul>
+            <li class="li_left">
+              <a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/Department_DC_form_and_procedure.pdf" class="">Digital certificate form and procedure</a>
+            </li>
+          </ul>
+         
+      </li>
+      
+      <li class="li_left"><a href="#" class="">Bidder</a>
+           
+          <ul>
+              <li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/Procedure_for_Digital_Certificate_Vendor.pdf" class="">Procedure for Certificate enrolment</a>
+              </li>
+              <li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/SifyClass2IndividualSigningEncryption1Year.pdf" class="">One year form</a>
+              </li>
+              <li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/SifyClass2IndividualSigningEncryption2Year.pdf" class=""> Two year form</a>
+              </li>
+        </ul>
+           
+      </li>
+    </ul> 
+  </li-->
+  
+   <li class="li_center"><a href="https://mahametrorail.etenders.in/indexes/signup#">Downloads</a>
+        
+   </li>
+   <!--<li class="li_center"><a href="https://mahametrorail.etenders.in/pages/contact-us">eAuction</a></li>
+   <li class="li_center"><a href="https://mahametrorail.etenders.in/pages/contact-us">Tender Archive</a></li>-->
+  <!-- <li class="li_center"><a target="_blank" href="https://mahametrorail.etenders.in/home_page_document/Tender_Forms_DSnD.zip" class="">Tender Forms</a></li> -->
+   <!--li class="li_center"><a href="https://mahametrorail.etenders.in/indexes/portal_page" target="_blank">Departments</a></li-->
+   <li class="li_center"><a href="https://mahametrorail.etenders.in/indexes/faq_page" target="_blank">FAQ</a></li>
+   
+   <li><a href="https://mahametrorail.etenders.in/indexes/test_certificate">Test Certificate</a></li>
+   <li class="li_center"><a href="https://mahametrorail.etenders.in/pages/contact-us" target="_blank">Contact Us</a></li>
+    <li class="li_center"><a href="http://www.metrorailnagpur.com/index.aspx" target="_blank">About MAHA-METRO</a></li>
+   <li style="float:right;">
+    <div id="" style=" margin-top:4px; margin-right:7px; background: #F1F1F1; padding:3px; float:left; border:1px solid #fff; height:20px; width:215px; font-size:14px; color: #292953; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; ">
+      Date Time: <div style="padding:1px; float:right;" id="DateClockTime_HOME_PAGE_TIME">8/03/2022 18:20:09</div>
+    </div> 
+  </li>
+</ul>
+
+<div id="marqueedt">
+ <br>
+ <br>
+</div> </div>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/jquery-1.3.2.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/ui.core.js.download"></script>
+  <script type="text/javascript" src="./MAHAMETRORAIL e-Procurement_files/ui.sortable.js.download"></script>
+   
+   <style type="text/css">
+          
+            
+             #sortable {
+                list-style-type: none;
+                margin: 5px 0px 0px 16px;
+                padding: 0;
+            }
+            #sortable li {
+                margin: 3px 3px 3px 0;
+                padding: 1px;
+                float: left;
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+                text-align: center;
+                line-height:35px;
+                cursor:pointer;
+                -moz-border-radius:5px;
+                -webkit-border-radius:5px;
+                -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+                -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+                text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+                background:#2daebf url(images/overlay.png) repeat-x scroll 50% 50%;
+                color:#fff;
+                font-weight:normal;
+            }
+            .captcha_wrap{
+                border:1px solid #cccccc;
+                -moz-border-radius:10px;
+                -webkit-border-radius:10px;
+                -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+                -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+                float:left;
+                height:75px;
+                overflow:auto;
+                width:270px;
+                overflow:hidden;
+                margin:0px 0px 0px 210px;
+                background-color:#fff;
+            }
+            .captcha_lbl{
+                -moz-border-radius:10px;
+                -webkit-border-radius:10px;
+                font-size:14px;
+                color:#000;
+                text-align: center;
+                border-bottom:1px solid #CCC;
+                background-color:#fff;
+            }
+      .pantext
+      {
+        background: none repeat scroll 0 0 #fefefe;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        color: #333;
+        font-family: "Lucida Grande",Verdana,sans-serif;
+        font-size: 14px;
+        margin: 0 5px 0 0;
+        outline: medium none;
+        padding: 7px;
+        vertical-align: middle;
+        width: 50px;
+      }
+      .button.mid_login
+            {
+         height:37px !important;
+         width:84px !important;
+              }
+       .isd 
+       {
+           background: #fefefe none repeat scroll 0 0;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        color: #333;
+        font-family: "Lucida Grande",Verdana,sans-serif;
+        font-size: 14px;
+        margin: 2px 1px 0 0;
+        outline: medium none;
+        padding: 7px;
+        vertical-align: middle;
+        width: 37px;
+        margin-left:-27px;
+       }
+        </style>
+        <script type="text/javascript">
+            (
+            function($){
+
+                $.fn.shuffle = function() {
+                    return this.each(function(){
+                        var items = $(this).children();
+
+                        return (items.length)
+                            ? $(this).html($.shuffle(items,$(this)))
+                        : this;
+                    });
+                }
+
+                $.fn.validate = function() {
+                    var res = false;
+                    this.each(function(){
+                        var arr = $(this).children();
+                        res =    ((arr[0].innerHTML=="1")&&
+                            (arr[1].innerHTML=="2")&&
+                            (arr[2].innerHTML=="3")&&
+                            (arr[3].innerHTML=="4")&&
+                            (arr[4].innerHTML=="5")&&
+                            (arr[5].innerHTML=="6"));
+                    });
+                    return res;
+                }
+
+                $.shuffle = function(arr,obj) {
+                    for(
+                    var j, x, i = arr.length; i;
+                    j = parseInt(Math.random() * i),
+                    x = arr[--i], arr[i] = arr[j], arr[j] = x
+                );
+                    if(arr[0].innerHTML=="1") obj.html($.shuffle(arr,obj))
+                    else return arr;
+                }
+
+            })(jQuery);
+      
+      
+    function yesnoCheck() {
+      
+       if (document.getElementById('yesCheck').checked) {
+                   document.getElementById('ifYes').style.display = 'none';
+        }
+        else document.getElementById('ifYes').style.display = 'block';
+
+    }
+
+            $(function() {
+                $("#sortable").sortable();
+                $("#sortable").disableSelection();
+                $('#sortable').shuffle();
+
+                $("#formsubmit").click(function(){
+                    ($('#sortable').validate()) ? alert("Yeah, you are a human!") : alert("No, you are not a human!");
+                });
+            });
+      function username_check(user_nm)
+      { 
+        $('#div_username_error').html('');
+        if(user_nm!='')
+        {
+          $.ajax({
+          type:"POST",
+          url:site_url+"/indexes/username_check/"+user_nm,
+          cache: true,
+          async:false,
+          data :{user_nm:user_nm}, 
+          success: function(data)
+          { 
+            if(data=='YES')
+            {
+              $('#div_username_error').html('Username already Exist');
+              check=1;
+              return false;
+            }     
+          }
+          });
+        }
+        return true;
+      }
+      function email_check(email_addr)
+      {
+        $('#div_email_error').html('');
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(email_addr!='' && !(re.test(email_addr)))
+        {
+          $('#div_email_error').html('Please enter Valid Email');
+          return false;
+        }
+        else
+        {
+          $.ajax({
+          type:"POST",
+          url:site_url+"/indexes/email_check/"+email_addr,
+          cache: true,
+          async:false,
+          data :{email_addr:email_addr}, 
+          success: function(data)
+          { 
+            if(data==0)
+            { 
+              $('#div_email_error').html('Email already Exist');
+              return false;
+            }     
+          }
+          });
+        }
+        return true;
+      }
+      function panvalidation()
+{
+$('#pans').html("");
+$('#panm').html("");
+$('#panl').html("");
+ var pan_nos = $("#pan_nos");
+ var pan_nom = $("#pan_nom");
+ var pan_nol = $("#pan_nol");
+  
+  var pansnumber = pan_nos.val();
+  var pansnumberm = pan_nom.val();
+    var pansnumberl = pan_nol.val();
+  var panspattern =  /^([A-Z]|\s)*$/;
+  var panspatternm =   /^[0-9]+$/;
+             
+   
+    if(pan_nos.val()=='')
+    {
+        $("#pans").attr("style", "display:block;color:red");
+        $('#pans').html("Enter Pancard Number");
+        //$("#newpwd").focus();
+        return false;
+    }
+  else if(!pansnumber.match(panspattern)){
+    $("#pans").attr("style", "display:block;color:red");
+        $('#pans').html("Enter First five letters in Alphabet");
+      // $("#newpwd").focus();
+    return false;
+  }
+  
+   if(pan_nom.val()=='')
+    {
+        $("#panm").attr("style", "display:block;color:red");
+        $('#panm').html("Enter Pancard Middle Number");
+        //$("#newpwd").focus();
+        return false;
+    }
+  else if(pansnumberm.length < 4)
+  {
+    $("#panm").attr("style", "display:block;color:red");
+        $('#panm').html("Enter 4 Digit Number");
+  return false;
+  }
+  if(!pansnumberm.match(panspatternm)){
+    $("#panm").attr("style", "display:block;color:red");
+        $('#panm').html("Enter Valid 4 Digit Number");
+      // $("#newpwd").focus();
+    return false;
+  }
+  
+   if(pan_nol.val()=='')
+    {
+        $("#panl").attr("style", "display:block;color:red");
+        $('#panl').html("Enter Pancard last Digit");
+        //$("#newpwd").focus();
+        return false;
+    }
+  else if(!pansnumberl.match(panspattern)){
+    $("#panl").attr("style", "display:block;color:red");
+        $('#panl').html("Last Digit Should be Alphabet");
+      // $("#newpwd").focus();
+    return false;
+  }
+   
+  
+  
+  else{
+  
+  // $("#company_address").focus();
+    return true;
+  }
+
+}
+      function validate_data()
+      { 
+        
+        $('#div_city_error').html('');
+        $('#div_state_error').html('');
+        $('#div_country_error').html('');
+        $('#div_fname_error').html('');
+        $('#div_lname_error').html('');
+        $('#div_company_error').html('');
+        $('#div_username_error').html('');
+        //$('#div_domain_id_error').html('');
+        $('#div_company_address_error').html('');
+        $('#div_category_field_id_error').html('');
+        $('#div_phone_error').html('');
+        $('#div_pan_no_error').html('');
+        $('#div_sec_email_error').html('');
+        $('#div_email_error').html('');
+        $('#div_discipline_error').html('');
+        $('#div_security_answer_error').html('');
+        $('#div_security_question_error').html('');
+        $('#div_confirmpwd_error').html('');
+        $('#div_password_error').html('');
+        $('#div_gst_type_error').html('');
+        
+        var passw = $("#password_signup");
+        var cpassw = $("#confirmpwd");
+        var pan_field = /^[A-Z]{5}\d{4}[A-Z]{1}$/; 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var check=0;
+        if($('#fname').val()=="")
+        {
+          $('#div_fname_error').html('Please enter First Name');
+          check=1;
+          //return false;
+        }
+        if($('#lname').val()=="")
+        {
+          $('#div_lname_error').html('Please enter Last Name');
+          check=1;
+          //return false;
+        }
+        if($('#company').val()=="")
+        {
+          $('#div_company_error').html('Please enter Company Name');
+          check=1;
+          //return false;
+        }
+        if($('#user_name1').val()=="")
+        {
+          $('#div_username_error').html('Please enter Username');
+          check=1;
+          //return false;
+        }
+        if($('#password_signup').val()=="")
+        {
+          $('#div_password_error').html('Please enter Password');
+          check=1;
+          //return false;
+        }
+        else if(passw.val().length < 8)
+        {
+          $('#div_password_error').html('Please enter at least 8 character length password');
+          check=1;
+        }
+        
+        if($('#confirmpwd').val()=="")
+        {
+          $('#div_confirmpwd_error').html('Please enter Confirm Password');
+          check=1;//return false;
+        }
+        else if($('#password_signup').val() != $('#confirmpwd').val())
+        {
+          $('#div_confirmpwd_error').html("Password and Confirm Password doesn't match");
+          check=1;//return false;
+        }
+        
+        if($('#security_question').val()=="")
+        {
+          $('#div_security_question_error').html('Please enter Security Question');
+          check=1;//return false;
+        }
+        if($('#security_answer').val()=="")
+        {
+          $('#div_security_answer_error').html('Please enter Security Answers');
+          check=1;//return false;
+        }
+        if($('#discipline').val()=="select")
+        {
+          $('#div_discipline_error').html('Please Select Discipline');
+          check=1;//return false;
+        }
+        if($('#email').val()=="")
+        {
+          $('#div_email_error').html('Please enter Email');
+          check=1;//return false;
+        }
+        else if($('#email').val()!='' && !(re.test($('#email').val())))
+        {
+          $('#div_email_error').html('Please enter valid Email');
+          check=1;//return false;
+        }
+        if($('#sec_email').val()!='' && !(re.test($('#sec_email').val())))
+        {
+          $('#div_sec_email_error').html('Please enter valid Secondary Email');
+          check=1;//return false;
+        }
+        if($('#city').val()=='')
+        {
+          $('#div_city_error').html('Please enter City');
+          check=1;//return false;
+        }
+        if($('#state').val()=='')
+        {
+          $('#div_state_error').html('Please enter State');
+          check=1;//return false;
+        }
+        
+        if($('#country').val()== '')
+        { 
+          
+          $('#div_country_error').html('Please enter Country');
+          check=1;//return false;
+        }
+        var country = $('#country').val()   
+        if(country.toUpperCase()== "INDIA")
+        {
+        
+              if($('#pan_no').val()=='')
+            {
+              $('#div_pan_no_error').html('Please enter PAN');
+              check=1;//return false;
+            }
+        }
+        
+        
+        
+        if($('#phone').val()=="" || $('#isd').val()=="")
+        {
+          $('#div_phone_error').html('Please enter Phone and isd code');
+          check=1;//return false;
+        }
+        if($('#category_field_id').val()=="select")
+        {
+          $('#div_category_field_id_error').html('Please select Vendor Category');
+          check=1;//return false;
+        }
+        if($('#company_address').val()=="")
+        {
+          $('#div_company_address_error').html('Please enter Company Office Address');
+          check=1;//return false;
+        }
+        if($('input[name="domain_id[]"]:checked').length == 0 )
+        {  
+          $('#div_domain_id_error').html('Please select Register to Portals');
+          check=1;//return false;
+        }
+        
+        if(country.toUpperCase()== "INDIA")
+        {
+        if($('#gst_no').val()=="")
+        {  
+          $('#div_gst_type_error').html('Please Enter GST No.');
+          check=1;//return false;
+        }
+        }
+      
+         if(check==1)
+        { 
+            
+          return false;
+        }
+        else if(check==0)
+        {
+          return true;
+        }
+        
+      }
+      function check_capctha()
+      { 
+         
+        $('#div_captcha_error').html(''); 
+        if(validate_data())
+        { 
+           
+          if($('#sortable').validate())
+          {
+               
+            return true;
+          }
+          else
+          {
+            document.getElementById('div_captcha_wrap').style.borderColor="#FF6600"; 
+            document.getElementById('div_captcha_lbl').style.background="#FF6600"; 
+            $('#div_captcha_error').html('Drag captcha in Proper Order');  
+            return false;
+          }
+        } 
+        else
+        {
+          return false;
+        }
+      }
+      /* function check_capctha()
+      {
+        
+        $('#div_captcha_error').html('');
+        validate_data();
+        if($('#sortable').validate())
+        {
+          return true;
+        }
+        else
+        {
+          document.getElementById('div_captcha_wrap').style.borderColor="#FF6600"; 
+          document.getElementById('div_captcha_lbl').style.background="#FF6600"; 
+          $('#div_captcha_error').html('Drag captcha in Proper Order'); 
+          return false;
+        }
+      } */
+//company username password confirmpwd security_question security_answer discipline email sec_email pan_no        
+
+/* $(function() {
+            $('#mobile').keyup(function() {
+                if (this.value.match(/[^0-9 ]/g)) {
+                    this.value = this.value.replace(/[^0-9 ]/g, '');
+                }
+            });
+        });
+    
+$(function() {
+            $('#fax').keyup(function() {
+                if (this.value.match(/[^0-9 ]/g)) {
+                    this.value = this.value.replace(/[^0-9 ]/g, '');
+                }
+            });
+        })
+    
+$(function() {
+            $('#phone').keyup(function() {
+                if (this.value.match(/[^0-9 ]/g)) {
+                    this.value = this.value.replace(/[^0-9 ]/g, '');
+                }
+            });
+        });
+
+ $(function() {
+            $('#mname234234').keyup(function() {
+                if (this.value.match(/[^a-zA-Z0-9_ ]/g)) {
+                    this.value = this.value.replace(/[^a-zA-Z0-9_ ]/g, '');
+                }
+            });
+        });
+
+ $(function() {
+            $('#fname').keyup(function() {
+                if (this.value.match(/[^a-zA-Z ]/g)) {
+                    this.value = this.value.replace(/[^a-zA-Z ]/g, '');
+                }
+            });
+        }); 
+
+ $(function() {
+            $('#mname').keyup(function() {
+                if (this.value.match(/[^a-zA-Z ]/g)) {
+                    this.value = this.value.replace(/[^a-zA-Z ]/g, '');
+                }
+            });
+        }); 
+
+ $(function() {
+            $('#lname').keyup(function() {
+                if (this.value.match(/[^a-zA-Z ]/g)) {
+                    this.value = this.value.replace(/[^a-zA-Z ]/g, '');
+                }
+            });
+        });     
+   */
+function check_email(user_email)
+{
+  var valid_email = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+  document.getElementById('req_check_msg').innerHTML='';
+  if (!valid_email.test(user_email))
+  {
+    document.getElementById('req_check_msg').innerHTML= 'Please insert valid Email.' ;
+    $( "#user_email" ).focus();
+    return false;
+  }
+  else
+  {
+    $.ajax({
+      type: "POST",
+      url: site_url+"/organization/check_user_email/", 
+      data: {user_email:user_email},
+      cache: false,
+      async:true, 
+      success: function(data)
+      {   
+       
+      if(data=='YES')
+      { 
+         document.getElementById('req_check_msg').innerHTML= '<font style="font-size: 13px; color: #2828f7;">'+user_email+'</font> Email Id alredy exits';
+         $( "#user_email" ).focus();
+         $("#user_email").val('');
+      } 
+      }
+    });
+    
+  }
+}   
+        </script>
+  <script type="text/javascript">
+
+function checkbiddertype(obj) {
+
+  
+  var ispan = document.getElementById( 'ispan' )
+  var regno = document.getElementById( 'regno' )
+
+    ispan.style.display = ( obj.id == 'yesCheck' ) ? '' : 'none'
+    regno.style.display = ( obj.id == 'noCheck' ) ? '' : 'none'
+
+}
+
+</script>
+  <style>
+  .block_head_msg
+  {
+  width: 98%;
+  height:370px;
+  margin: 12px 0px 0 0;
+    padding: 5px 5px 5px 5px;
+  border: 1px solid #bfde84;
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+  }
+  .block_head_msg h3 {
+   padding-left:45px;
+   padding-right:45px;
+  font-size: 16px;
+  font-weight: normal;
+   
+  color: #000;
+  text-shadow: 1px 1px 0 #fffccc;
+  float: left;
+  }
+  
+.block .block_head h2 {
+  font-family: "Titillium999", "Trebuchet MS", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #555;
+  text-shadow: 1px 1px 0 #fff;
+  float: left;
+  }
+  
+  .h3 {
+  font-family:'Noticia Text', Georgia, "Times New Roman", Times, serif;
+    
+   
+  font-size: 16px;
+   color: #000;
+   
+     
+  
+  }
+  .smalltext {
+  width: 247px;
+  background: #fefefe;
+  border: 1px solid #bbb;
+  font-family: "Lucida Grande", Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+  padding: 7px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  outline: none;
+  vertical-align: middle;
+        margin: 0 5px 0 0;
+  }
+  .smalltextisd {
+  width: 193px;
+  background: #fefefe;
+  border: 1px solid #bbb;
+  font-family: "Lucida Grande", Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+  padding: 7px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  outline: none;
+  vertical-align: middle;
+        margin: 0 5px 0 0;
+  }
+  .smalltextarea {
+  width: 255px !important;
+  height: 140px;
+  padding: 5px;
+  background: #fefefe;
+  border: 1px solid #bbb;
+  font-family: "Lucida Grande", Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  outline: none;
+  }
+  
+.profile
+{
+    float: left;
+    width: 97%;
+   
+}
+.profile h2
+{
+font-family:'Noticia Text', Georgia, "Times New Roman", Times, serif;
+    background: #FFE1B5;
+  margin: 20px 0px 0 0;
+    padding: 5px 5px 5px 5px;
+  font-size: 16px;
+   
+  border: 1px solid #FFCB7E;
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+}
+.profileleft
+{
+    float: left;
+    width: 32%;
+    /*border: 1px solid aqua;*/
+  margin: 5px 0px 0 10px;
+    padding-right:0px 0px 3px 5px;
+}
+.profilemiddle
+{
+    float: left;
+    width: 32%;
+  margin: 5px 0px 0 10px;
+    padding:0px 0px 3px 5px;
+    /*border: 1px solid fuchsia;*/
+}
+.profilearea
+{
+    float: left;
+    width: 60%;
+    padding:0px 2px;
+  margin: 5px 0px 0 10px;
+    /*border: 1px solid fuchsia;*/
+}
+.profileright
+{
+    float: right;
+    width: 32%;
+  margin: 5px 0px 0 10px;
+    padding-left:0px;
+    /*border: 1px solid gray;*/
+}
+ .block form input.submit {
+  width: 85px;
+  height: 30px;
+  line-height: 30px;
+  background: url(../img/btns.gif) top center no-repeat;
+  border: 0;
+  font-family: "Titillium800", "Trebuchet MS", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 0 #0a5482;
+  cursor: pointer;
+  margin-right: 10px;
+  vertical-align: middle;
+  }
+  
+  .block form input.submit:hover {
+  background: url(../img/btns_.gif) top center no-repeat;
+  text-shadow: 1px 1px 0 #b55f10;
+  }
+ .green-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #508600;;
+    vertical-align: middle;
+}
+.td_class
+{
+background-color: #CDCDCD;
+}
+.dd
+{
+  float:right;
+}
+  </style>
+    
+ <div id="content_area_signup1" style="margin-left:1px;height:100%;">
+      
+       <div class="block_head" style="padding-left:27px;height:100%">
+           
+            <div style="padding-top:10px;padding-bottom:10px;">
+      <h2>Contractor / Bidder / Supplier Enrollment Form</h2>
+      </div>  
+     
+            <form name="frmuserinfo" id="frmuserinfo" method="post" action="https://mahametrorail.etenders.in/indexes/signup" enctype="multipart/form-data"> 
+        <div class="profile">
+                  
+                  <h2>Login Details</h2>
+        <table style="width:100%;">
+             <tbody><tr style="display:none;">
+            <td>  
+              <b>Registration Type</b>
+            </td> 
+            <td> 
+              <input type="radio" name="data[User][user_type]" value="7" checked="checked">  
+            </td>
+           </tr>
+          <tr style="">
+            <td width="18%"><b>Login Id :</b><span class="redstar">*</span></td>
+            <td width="18%">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][username]" type="text" id="user_name1" class="smalltext required" onblur="return username_check(this.value)" maxlength="50" value="">                                   <div id="div_username_error" style="color:red;"></div>  
+            
+            </td>
+            
+            <td width="18%"><b>Password :</b><span class="redstar">*</span></td>
+            <td width="18%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password_signup" id="password_signup" class="smalltext required" value="">
+          
+                                    <div id="div_password_error" style="color:red;"></div>
+            </td>
+            <td width="18%"><b>Confirm Password :</b><span class="redstar">*</span></td>
+            <td width="18">
+            <input type="password" name="data[User][confirmpwd]" id="confirmpwd" value="" class="smalltext required">           <br>                        </td>
+          </tr>
+          <tr style="">
+            <td width="18%"><b>Security Question :</b><span class="redstar">*</span></td>
+            <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][security_question]" type="text" id="security_question" class="smalltext required" maxlength="200" value=""> 
+                        <div id="div_security_question_error" style="color:red;"></div>           
+            </td>            
+            <td width="18%"><b>Security Answer </b><span class="redstar">*</span></td>
+            <td width="18%">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][security_answer]" type="text" id="security_answer" class="smalltext required" maxlength="200" value="">                       <div id="div_security_answer_error" style="color:red;"></div>           
+            </td>
+            <td width="18%" colspan="2"></td>
+          </tr>
+          <tr>
+          <td width="18%" colspan="5"><span style="font-style: italic;">[ Tip : Password should be Minimum 8 characters at least 1 Alphabet, 1 Number and 1 Special Character]</span></td>
+          </tr>
+          
+        </tbody></table>                
+            </div>  
+      <div class="profile">
+         <h2>Company Details</h2>
+         <table style="width:100%;" border="0">
+         <tbody><tr>
+              <td width="18%"><b>Company Name:</b><span class="redstar">*</span></td>
+             <td width="18%"><input name="data[User][company]" type="text" id="company" class="smalltext required" maxlength="150" value="">                        <div id="div_company_error" style="color:red;"></div>
+           </td>
+           
+          <td width="18%">
+            <b>Company Office Address <font color="red">*</font></b>
+          </td>
+          <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="data[User][company_address]" cols="30" rows="6" id="company_address" class="smalltextarea required"></textarea>                        <div id="div_company_address_error" style="color:red;"></div>
+          </td>
+                    <td width="18%">
+            <b>City </b><font color="red">*</font>
+          </td> 
+          <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][city]" type="text" id="city" class="smalltext" maxlength="500" value="">            <div id="div_city_error" style="color:red;"></div>
+          </td>         
+         </tr>
+         
+         <tr>
+              <td width="18%">
+            <b>State</b><font color="red">*</font>
+          </td> 
+          <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][state]" type="text" id="state" class="smalltext" maxlength="500" value="">            <div id="div_state_error" style="color:red;"></div>
+          </td>
+
+                    <td width="18%">
+            <b>Country </b><font color="red">*</font>
+          </td> 
+          <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][country]" type="text" id="country" class="smalltext" maxlength="500" value="">            <div id="div_country_error" style="color:red;"></div>
+            
+          </td>
+          <td width="18%">
+            <b>Fax </b>
+           </td>  
+            <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][fax]" type="text" id="fax" class="smalltext" maxlength="15" value="">         </td>
+                            
+         </tr>
+       
+        <tr>
+           
+           <td width="18%">
+            <b>Telephone <font color="red">*</font></b>
+          </td> 
+           <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][isd]" type="text" id="isd" placeholder="ISD" class="isd" maxlength="11" value=""><input name="data[User][phone]" type="text" id="phone" class="smalltextisd required" maxlength="15" value="">                        <div id="div_phone_error" style="color:red;"></div>
+          </td> 
+              
+          <td width="28%">
+            <b>Email <font color="red">*</font></b>
+          </td> 
+          <td width="18%">
+            <input name="data[User][email]" type="text" id="email" onblur="email_check(this.value);" class="smalltext required" maxlength="100" value="">                         
+            <div id="div_email_error" style="color:red;"></div>
+          </td> 
+        
+          <td width="18%">
+            <b>Secondary Email</b>
+          </td> 
+          <td width="18%">  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][sec_email]" type="text" id="sec_email" class="smalltext required" maxlength="100" value="">                       <div id="div_sec_email_error" style="color:red;"></div>
+          </td>
+        </tr>
+        </tbody></table>
+          <table style="width:100%;" border="0">
+       
+        </table>
+         <h2>Personal Details</h2>
+          <table style="width:100%;" border="0">
+         <tbody><tr>
+          <td width="18%"><b>First Name of Contact Person :<font color="red">*</font></b></td>
+        <td width="18%">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][fname]" type="text" id="fname" class="smalltext required" maxlength="50" value="">            <div id="div_fname_error" style="color:red;"></div>
+                    </td>
+                <td width="18%">
+            <b>Last Name of Contact Person :<font color="red">*</font></b>
+        </td> 
+        <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][lname]" type="text" id="lname" class="smalltext required" maxlength="50" value="">            <div id="div_lname_error" style="color:red;"></div>
+                    </td>
+         <td width="18%">
+            <b>Mobile </b>
+          </td> 
+         <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][mobile]" type="text" id="mobile" class="smalltext" maxlength="15" value="">         </td>
+                      
+        </tr>
+        </tbody></table>
+         <h2>Registration Details</h2>
+          <table style="width:100%;" border="0">
+        <tbody><tr>
+           
+          <td width="18%">
+            <b>Type of Ownership<font color="red">*</font></b>
+          </td> 
+           <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="vendor_category_id" class="smalltext" id="vendor_category_id">
+<option value="select" selected="selected">--Select Vendor Category--</option>
+<option value="1">Public Limited </option>
+<option value="2">Private Limited</option>
+<option value="3">Propritership</option>
+<option value="4">Partnership</option>
+<option value="5">Joint Venture</option>
+<option value="6">State Government </option>
+<option value="7">Central Government</option>
+<option value="8">Others</option>
+</select>           
+            
+            
+            <input type="hidden" name="category_field_id" id="category_field_id" value="1">
+            <div id="div_category_field_id_error" style="color:red;"></div>
+                      </td> 
+            <td width="18%">
+            <b>Discipline <font color="red">*</font></b>
+          </td> 
+          <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="discipline" class="smalltext" id="discipline">
+<option value="select" selected="selected">--Select Discipline--</option>
+<option value="1">Works</option>
+<option value="2">Supplies</option>
+<option value="3">Services</option>
+</select>           <div id="div_discipline_error" style="color:red;"></div>
+                      </td>     
+           <td width="18%">
+            <b>PAN </b>
+          </td> 
+           <td width="18%">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][pan_no]" type="text" id="pan_no" class="smalltext required" maxlength="10" value="">            <!--E.g. ABCFE1234A -->
+            
+                        <div id="div_pan_no_error" style="color:red;"></div>
+          </td> 
+        </tr>
+        <tr>
+               <td width="18%">
+            <b>Tax Registration No </b>
+             </td>  
+             <td width="18%"> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="data[User][tax_reg_no]" type="text" id="tax_reg_no" class="smalltext required" maxlength="25" value="">            <!--E.g. ABCFE1234A -->
+            <span style="font-style: italic;">(Note: -Relevant tax registration no of the country of origin)</span>
+                        <div id="div_pan_no_error" style="color:red;"></div>
+          </td> 
+              <td width="18%">
+            <b>Country of origin  </b>
+              </td>
+                    <td width="18%">
+                      <div style="margin-left:0px;">
+        
+              
+              <input type="radio" value="indian" onclick="javascript:yesnoCheck();" checked="checked" name="bidder_type">Indian Bidder  
+              <input type="radio" onclick="javascript:yesnoCheck();" value="foreign" id="yesCheck" name="bidder_type">Foreign Bidder
+          </div>            
+                    </td>
+                    <td width="18%">
+            <b>Statutory registration certificate of country of origin <font color="red"></font></b>
+          </td>
+          <td width="18%">
+          <input type="file" name="certificate_doc" id="certificate_doc" style="height:35px !important;margin-left:23px;" class="smalltextarea required" required="">
+          </td>   
+        </tr>
+        
+        </tbody></table>
+         
+           
+         <table style="width:100%;" border="0">
+          <tbody><tr>
+
+          <td width="3%">
+            <b>Type of Industry </b>
+          </td> 
+          <td width="34%">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="data[User][company_type]" id="UserCompanyTypeMicroEnterprises" class="" value="Micro Enterprises" checked="checked"><label for="UserCompanyTypeMicroEnterprises">&nbsp;Micro Enterprises</label><input type="radio" name="data[User][company_type]" id="UserCompanyTypeSmallEnterprises" class="" value="Small Enterprises"><label for="UserCompanyTypeSmallEnterprises">&nbsp;Small Enterprises</label><input type="radio" name="data[User][company_type]" id="UserCompanyTypeMediumEnterprises" class="" value="Medium Enterprises"><label for="UserCompanyTypeMediumEnterprises">&nbsp;Medium Enterprises</label><input type="radio" name="data[User][company_type]" id="UserCompanyTypeLargeEnterprises" class="" value="Large Enterprises"><label for="UserCompanyTypeLargeEnterprises">&nbsp;Large Enterprises</label>      
+            
+          </td>
+          
+          </tr> 
+          
+    
+         </tbody></table><br>
+         <table id="ifYes" style="width:100%">    
+      
+          <tbody><tr style="vertical-align:top;">
+            <td width="13%"><b>GST No.</b><font color="red">*</font></td>
+            <td width="15%">
+          
+            <input name="gst_no" type="text" id="gst_no" class="smalltext required" maxlength="250" value="">            <div id="div_gst_type_error" style="color:red;"></div>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            
+          </tr>
+          
+        </tbody></table>  
+         
+         </div>
+         </form></div>
+               <table style="width:100%;" border="0">
+           
+      <tbody><tr>
+        <td width="18%">
+          <div>
+            <div style="color:red; font-size: 11px;" id="req_check_msg">&nbsp;</div>
+            
+              
+          </div><br><div id="div_captcha_error" style="color:red;"></div>
+        </td>
+            </tr>
+    </tbody></table>
+      
+        <div style="padding-left:27%;padding-top:20px;">
+      
+      <input type="submit" name="btn_edit" id="btn_edit" class="button mid_login" onclick="return check_capctha();" value="Submit" title="Submit">
+      <input type="button" name="btn_cancel" id="btn_cancel" class="button mid_login" value="Back" title="Cancel" onclick="document.location='https://mahametrorail.etenders.in/users/usergrid'">
+      
+    </div>  
+       
+     
+        <!-- .block_content ends -->
+        <div class="bendl"></div>
+        <div class="bendr"></div>
+    </div>  
+    </div>  
+   
+  </div>
+  
+<script type="text/javascript">
+     
+  $(document).ready(function()
+  { 
+  
+    $('#selectall_domain').click(function(event) {  //on click 
+    if(this.checked) { // check select status
+      $('.domain_chk').each(function() { //loop through each checkbox
+        this.checked = true;  //select all checkboxes with class "checkbox1"               
+      });
+    }else{
+      $('.domain_chk').each(function() { //loop through each checkbox
+        this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+      });         
+    }
+    });
+   
+  });
+</script> 
+
+<!-- .block ends --><div id="footer">
+<div style="float:right;">
+Copyright © 2016 nextenders eProcurement | Powered by <a href="http://nextenders.com/" target="_blank">
+<img src="./MAHAMETRORAIL e-Procurement_files/logo.png" border="0">
+</a>
+</div>
+ <div style="float:left; width:52%; border:0px solid;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <a href="https://mahametrorail.etenders.in/pages/terms-of-use">Terms of Use</a><b class="pipe">|</b><a href="https://mahametrorail.etenders.in/pages/privacy-policy">Privacy Policy</a><b class="pipe">|</b><a href="https://mahametrorail.etenders.in/pages/contact-us">Contact Us</a><b class="pipe">|</b><a href="https://mahametrorail.etenders.in/pages/terms-for-online-payments">Terms for Online Payments </a>  <div style="float:left;">  
+  Best view in <b>1360x768</b> Resolution
+</div>   
+</div>   
+</div>    
+    <!-- container ends -->
+   
+
+    
+   
+
+<div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div></div><iframe src="./MAHAMETRORAIL e-Procurement_files/audio-devices.html" allow="microphone" style="display: none;"></iframe><input type="file" id="" name="file" style="display: none;"><div data-v-5f0b9ba1="" class="container_selected_area" style="cursor: url(&quot;chrome-extension://ijejnggjjphlenbhmjhhgcdpehhacaal/assets/images/cursor-imagen.svg&quot;) 9 9, crosshair;"><div data-v-5f0b9ba1="" class="area"></div></div><div id="scrnli_recorder_root"></div><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body>
+</html>

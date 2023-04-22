@@ -1,0 +1,1549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)https://mahametrorail.etenders.in/banks/detail/mahametrorail/OQ==/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><div id="twoseven-scripts" data-info="Scripts added by TwoSeven extension" style="display: none !important; position: static !important; top: 0px !important; left: 0px !important; width: 0px !important; height: 0px !important;"><script type="text/javascript" id="__tmpScript-288957646" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-993530883" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-530677341" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-324285407" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-78991741" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-852286054" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-202889918" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-348905526" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-417952537" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-729150359" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-33818584" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-591912048" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-760810418" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-320499304" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-895556862" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-166968538" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-251312084" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-536192642" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-44504312" data-added-by-two-seven="1">(function() {
+        window.twoseven = {};
+      })();</script><script type="text/javascript" id="__tmpScript-205735863" data-added-by-two-seven="1">(function() {
+        window.twoseven.waitForDOMNode = async function t(e,t=document){e=e||{};const{type:n,value:o}=e;if(!n||!o)throw new Error("Must specify identifier");let s=o;switch(n){case"tag":s=o.toUpperCase()}if("check"!==n){const e=await i({type:"selector",value:s},[],t);if(e)return new Promise(t=>t(e))}async function i({type:e,value:t},n,o){let s;switch(e){case"tag":s=n.find(e=>e.tagName===t);break;case"selector":s=o.querySelector(t);break;case"check":for(const e of n){if(await t(e))return e}}return s}return new Promise((e,o)=>{const a=new MutationObserver(async o=>{for(const r of o)if("childList"===r.type){const o=Array.from(r.addedNodes),w=await i({type:n,value:s},o,t);if(w)return a.disconnect(),e(w)}});a.observe(t,{childList:!0,subtree:!0})})};
+      })();</script><script type="text/javascript" id="__tmpScript-122593894" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.reportError = function n(e,t,n){"string"==typeof(n=n||{})&&(n={message:n});const{message:o,stack:s}=t;Object.assign(n,{tag:e,error:{message:o,stack:s}}),window.tsExtGetPostToParent()({name:name,tag:e,action:"report-error",json:n}),console.error(JSON.stringify(n.error))}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-702838253" data-added-by-two-seven="1">(function() {
+        
+    window.twosevenHmsToSecondsOnly = function(str) {
+        var p = str.split(':'),
+            s = 0, m = 1;
+
+        while (p.length > 0) {
+            s += m * parseInt(p.pop(), 10);
+            m *= 60;
+        }
+
+        return s;
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-610791109" data-added-by-two-seven="1">(function() {
+        window.twosevenExtLog = function(e,o,c){o||(o=e,e=void 0);let n=c||"black";if(c)switch(c){case"success":n="Green";break;case"info":n="DodgerBlue";break;case"error":n="Red";break;case"warning":n="Orange";break;default:n=c}e?console.log("%c"+e+": "+o,`color:${n}`):console.log("%c"+o,`color:${n}`)};
+      })();</script><script type="text/javascript" id="__tmpScript-165646078" data-added-by-two-seven="1">(function() {
+        
+    document.twosevenGET = function(url, callback) {
+      var xmlhttp = new XMLHttpRequest();
+
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+          if (xmlhttp.status == 200) {
+            callback(null, xmlhttp.responseText);
+          } else {
+            callback('something else other than 200 was returned', '');
+          }
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    };
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-752840216" data-added-by-two-seven="1">(function() {
+        
+    window.triggerEvent = function(e,t,n,o=!1){let s;o?(n&&"string"!=typeof n&&(n=JSON.stringify(n)),s=n):s={data:n},window.twosevenScriptsDiv&&n&&"object"==typeof n&&(console.warn(`WARNING: Attempting to send an object via event.detail from CS->Page does not work on Firefox: ${JSON.stringify(n)}`),console.error((new Error).stack));var i=new CustomEvent(t,{bubbles:!0,composed:!0,detail:s});e.dispatchEvent(i)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-543337748" data-added-by-two-seven="1">(function() {
+        window.twoseven.postTo = async function o(e,t,n=!1){let o;return t.name=t.name||name,o=n?new Promise(e=>{const n=`ack-${t.action}-${1e9*Math.random()|0}`;t.ack={event:n};window.debug&&["play","pause","currentTime"].some(e=>t.action.includes(e)),window.addEventListener("message",function t({data:o={}}){o.action===n&&(window.removeEventListener("message",t),e(o.json))})}):new Promise(e=>e()),e.postMessage(t,"*"),o};
+      })();</script><script type="text/javascript" id="__tmpScript-592366559" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostTo = function s(){return window.twoseven&&window.twoseven.postTo||window.postTo};
+      })();</script><script type="text/javascript" id="__tmpScript-323605693" data-added-by-two-seven="1">(function() {
+        window.tsExtGetPostToParent = function i(){return window.twoseven&&window.twoseven.postToParent||window.postToParent};
+      })();</script><script type="text/javascript" id="__tmpScript-965002441" data-added-by-two-seven="1">(function() {
+        window.twoseven.postResponse = async function a(e,t){const{source:n,data:{ack:{event:o}}}=e;window.tsExtGetPostTo()(n,{action:o,json:t})};
+      })();</script><script type="text/javascript" id="__tmpScript-548214216" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToParent = async function r(e,t=!1){return window.tsExtGetPostTo()(window.parent,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-431284437" data-added-by-two-seven="1">(function() {
+        window.twoseven.postToTop = async function w(e,t=!1){return window.tsExtGetPostTo()(window.top,e,t)};
+      })();</script><script type="text/javascript" id="__tmpScript-528583693" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.getFromStorage = e=>new Promise((t,n)=>{const o="get-from-storage-"+(1e9*Math.random()|0);window.addEventListener(o,e=>{window.removeEventListener(o,this);const{detail:{data:{value:n}}}=e;t(n)}),triggerEvent(window,"get-from-storage",{key:e,evt:o})})
+    window.twoseven.saveToStorage = e=>{triggerEvent(window,"save-to-storage",e)}
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-300884800" data-added-by-two-seven="1">(function() {
+        
+    window.attachHistoryListeners = function d(){var e=history.pushState;history.pushState=function(t,n,o){return"function"==typeof history.onpushstate&&history.onpushstate({state:t}),triggerEvent(window,"pushstate",{uri:o}),e.apply(history,arguments)};var t=history.replaceState;history.replaceState=function(e){return"function"==typeof history.onreplacestate&&history.onreplacestate({state:e}),t.apply(history,arguments)}}
+    window.attachHistoryListeners()
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-64316851" data-added-by-two-seven="1">(function() {
+        window.twoseven.once = function c(e,t,n){e.addEventListener(t,function o(s){e.removeEventListener(t,o),n(s)})};
+      })();</script><script type="text/javascript" id="__tmpScript-440134785" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isOnTwoSevenTab = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'is-on-twoseven-tab' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-133386285" data-added-by-two-seven="1">(function() {
+        
+    window.twoseven.isPaused = async () => {
+      const result = await window.twoseven.postTo(window, { action: 'twoseven:pause-state' }, true)
+      return result
+    }
+  ;
+      })();</script><script type="text/javascript" id="__tmpScript-983223278" data-added-by-two-seven="1">(function() {
+        
+      const modal = document.querySelector('.twoseven-ext-tab-media-modal')
+      const modalCloseBtn = modal.querySelector('.close')
+      function closeModal () {
+        modal.style.display = 'none'
+        const frame = document.querySelector('#twoseven-ext-tab-media-iframe').contentWindow
+        frame.postMessage({
+          __evt_name: 'modal-hide'
+        }, '*')
+      }
+      modalCloseBtn.onclick = closeModal
+
+      window.onmessage = function (e) {
+        if (e.data.__evt_name === 'modal-hide') {
+          closeModal()
+        }
+      }
+
+      window.twoseven.closeTabMediaModal = closeModal
+
+      window.onclick = function (e) {
+        if (e.target.id === 'twoseven-ext-tab-media-modal' && modal.style.display === 'block') {
+            closeModal()
+        }
+      }
+    ;
+      })();</script></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <link rel="icon" href="https://mahametrorail.etenders.in/img/favicon.ico" type="image/gif">
+    <title>MAHAMETRORAIL e-Procurement</title>
+    <meta name="description" content="Next generation procurement"><meta name="keywords" content="procurement, e-tendering, NexTenders, Next generation procurement, e-auction , e-Auction">
+     
+
+	<link rel="stylesheet" type="text/css" href="./Home_files/style.css">
+	<link rel="stylesheet" type="text/css" href="./Home_files/ddmenu.css">
+
+	<style type="text/css">@import url(/css/jquery-ui-1.7.2.custom.css);</style>
+
+	<script type="text/javascript" src="./Home_files/jquery-1.7.2.min.js.download"></script>
+	<script type="text/javascript" src="./Home_files/bar.js.download"></script>
+
+	<script type="text/javascript" src="./Home_files/jquery.img.preload.js.download"></script>
+	<script type="text/javascript" src="./Home_files/jquery.filestyle.mini.js.download"></script>
+	<script type="text/javascript" src="./Home_files/jquery.wysiwyg.js.download"></script>
+	<script type="text/javascript" src="./Home_files/jquery.date_input.pack.js.download"></script>
+	<script type="text/javascript" src="./Home_files/jquery.select_skin.js.download"></script>
+
+	<script type="text/javascript" src="./Home_files/jquery-ui.min.js.download"></script>
+	<script type="text/javascript" src="./Home_files/jquery-ui-timepicker-addon.js.download"></script>
+	<script type="text/javascript" src="./Home_files/jquery-ui-sliderAccess.js.download"></script>
+    
+    <style>
+		.noscript_css
+		{
+			background: none repeat scroll 0 0 #333333;
+		    border-bottom: 1px solid #666666;
+		    margin-left: -10px;
+		    padding-left: 10px;
+		    padding-right: 10px;
+		    width: 100%;
+		    font-size: 11px;   
+		}
+		.noscript_css p
+		{
+			margin: 0 auto;
+		    padding: 2px 5px;
+		    text-align: left;
+		    color:#fff;
+		}
+		#hld { 
+			min-height: 450px;
+	}
+	.container_div{
+	
+background:#ffffff;
+ -webkit-border-radius:  5px;
+	-moz-border-radius:     5px;
+	border-radius: 	        5px;
+}
+ 
+	</style>
+	
+	<script language="JavaScript" type="text/javascript">
+		var site_url = 'https://mahametrorail.etenders.in';
+		/*
+		var message="Right Click Disabled!";
+	
+		function clickIE4(){
+			if (event.button==2){
+			return false;
+			}
+		}
+	
+		function clickNS4(e){
+			if (document.layers||document.getElementById&&!document.all){
+				if (e.which==2||e.which==3){
+					return false;
+				}
+			}
+		}
+	
+		if (document.layers){
+			document.captureEvents(Event.MOUSEDOWN);
+			document.onmousedown=clickNS4;
+		}
+		else if (document.all&&!document.getElementById){
+			document.onmousedown=clickIE4;
+		}
+
+		document.oncontextmenu=new Function("alert(message);return false")
+
+	
+	
+		var site_url = 'https://mahametrorail.etenders.in';
+		var surl = site_url+'/indexes/search_results___';		
+		
+		$(document).ready(function()
+		{	
+			/// $('#scrollbar1').tinyscrollbar(); 
+		});
+		
+		$(document).ready(function(){
+			// $('#scrollbar2').tinyscrollbar();
+			// $('#scrollbar3').tinyscrollbar();	
+		});
+		 
+		function searchresult(surl,frm,bank)
+		{
+		    if(frm=='')
+		    {
+			$("#search_data").html('<img src="'+site_url+'/img/ajax-loader-search.gif" alt="Loading..." style="padding:40px 0px 0px 230px" />');
+			$.ajax({
+		            type: "POST",
+		            url: surl,
+		            data:'bank='+bank,
+		            success: function(response){
+		                $("#search_data").html(response);
+		            }
+		   	});
+		    }
+		    else{
+			$("#search_data").html('<img src="'+site_url+'/img/ajax-loader-search.gif" alt="Loading..." style="padding:40px 0px 0px 230px"/>');
+		    	$.ajax({
+		            type: "POST",
+		            data:'bank='+bank+'&'+$('#frmSearch').serialize(),
+		            url: surl,
+		            success: function(response){
+		                $("#search_data").html(response);
+		            }
+		   	 });
+		    }
+		}
+		*/
+	</script>
+<link href="chrome-extension://cjdnfmjmdligcpfcekfmenlhiopehjkd/web_resources/modal/modal.css" rel="stylesheet" id="__tmpStyle"><style type="text/css">button.btn[data-v-5f0b9ba1]{display:inline-block;font-weight:300;line-height:1.25;text-align:center;white-space:nowrap;vertical-align:middle;user-select:none;border:1px solid transparent;cursor:pointer;letter-spacing:1px;transition:all .15s ease}button.btn.btn-sm[data-v-5f0b9ba1]{padding:.4rem .8rem;font-size:.8rem;border-radius:.2rem}button.btn.btn-primary[data-v-5f0b9ba1]{color:#fff;background-color:#45C8F1;border-color:#45C8F1}button.btn.btn-outline-primary[data-v-5f0b9ba1]{color:#45C8F1;background-color:transparent;border-color:#45C8F1}button.btn.btn-danger[data-v-5f0b9ba1]{color:#fff;background-color:#FF4949;border-color:#FF4949}.text-muted[data-v-5f0b9ba1]{color:#8492A6}.text-center[data-v-5f0b9ba1]{text-align:center}.drop-down-enter[data-v-5f0b9ba1],.drop-down-leave-to[data-v-5f0b9ba1]{transform:translateX(0) translateY(-20px);transition-timing-function:cubic-bezier(0.74, 0.04, 0.26, 1.05);opacity:0}.drop-down-enter-active[data-v-5f0b9ba1],.drop-down-leave-active[data-v-5f0b9ba1]{transition:all .15s}.move-left-enter[data-v-5f0b9ba1],.move-left-leave-to[data-v-5f0b9ba1]{transform:translateY(0) translateX(-80px);transition-timing-function:cubic-bezier(0.74, 0.04, 0.26, 1.05);opacity:0}.move-left-enter-active[data-v-5f0b9ba1],.move-left-leave-active[data-v-5f0b9ba1]{transition:all .15s}.no-tr[data-v-5f0b9ba1]{transition:none !important}.no-tr *[data-v-5f0b9ba1]{transition:none !important}.overlay[data-v-5f0b9ba1]{position:fixed;background:rgba(220,220,220,0.8);display:flex;align-items:center;justify-content:center;top:0;left:0;right:0;bottom:0;transition:all 0.2s ease;opacity:0;visibility:hidden}.overlay .modal[data-v-5f0b9ba1]{transition:all 0.2s ease;opacity:0;transform:scale(0.6);overflow:hidden}.overlay.show[data-v-5f0b9ba1]{opacity:1;visibility:visible}.overlay.show .modal[data-v-5f0b9ba1]{opacity:1;transform:scale(1)}.panel[data-v-5f0b9ba1]{padding:6px 10px;display:flex;width:100%;box-sizing:border-box;align-items:center;border-radius:4px;position:relative;border:1px solid #eaf7ff;background:#f7fcff;outline:none;transition:all 0.07s ease-in-out}.btn[data-v-5f0b9ba1]{cursor:pointer;box-sizing:border-box}.light-btn[data-v-5f0b9ba1]{padding:6px 10px;display:flex;width:100%;box-sizing:border-box;align-items:center;border-radius:4px;position:relative;border:1px solid #eaf7ff;background:#f7fcff;outline:none;cursor:pointer;transition:all 0.07s ease-in-out}.light-btn[data-v-5f0b9ba1]:hover{background:#e0f4ff;border-color:#8acfff}.shake[data-v-5f0b9ba1]{animation:shake-data-v-5f0b9ba1 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;transform:translate3d(0, 0, 0)}@keyframes shake-data-v-5f0b9ba1{10%,90%{transform:translate3d(-1px, 0, 0)}20%,80%{transform:translate3d(2px, 0, 0)}30%,50%,70%{transform:translate3d(-4px, 0, 0)}40%,60%{transform:translate3d(4px, 0, 0)}}.pulse[data-v-5f0b9ba1]{animation:pulse-data-v-5f0b9ba1 2s ease infinite}@keyframes pulse-data-v-5f0b9ba1{0%{opacity:.7}50%{opacity:.4}100%{opacity:.7}}.flash-once[data-v-5f0b9ba1]{animation:flash-once 3.5s ease 1}@keyframes fade-up-data-v-5f0b9ba1{0%{transform:translate3d(0, 10px, 0);opacity:0}100%{transform:translate3d(0, 0, 0);opacity:1}}.fade-in[data-v-5f0b9ba1]{animation:fade-in-data-v-5f0b9ba1 .3s ease-in-out}@keyframes fade-in-data-v-5f0b9ba1{0%{opacity:0}100%{opacity:1}}.spin[data-v-5f0b9ba1]{animation-name:spin-data-v-5f0b9ba1;animation-duration:2000ms;animation-iteration-count:infinite;animation-timing-function:linear}@keyframes spin-data-v-5f0b9ba1{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.bounceIn[data-v-5f0b9ba1]{animation-name:bounceIn-data-v-5f0b9ba1;transform-origin:center bottom;animation-duration:1s;animation-fill-mode:both;animation-iteration-count:1}@keyframes bounceIn-data-v-5f0b9ba1{0%,20%,40%,60%,80%,100%{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:1;-webkit-transform:scale3d(0.8, 0.8, 0.8);transform:scale3d(0.8, 0.8, 0.8)}20%{-webkit-transform:scale3d(1.1, 1.1, 1.1);transform:scale3d(1.1, 1.1, 1.1)}40%{-webkit-transform:scale3d(0.9, 0.9, 0.9);transform:scale3d(0.9, 0.9, 0.9)}60%{opacity:1;-webkit-transform:scale3d(1.03, 1.03, 1.03);transform:scale3d(1.03, 1.03, 1.03)}80%{-webkit-transform:scale3d(0.97, 0.97, 0.97);transform:scale3d(0.97, 0.97, 0.97)}100%{opacity:1;-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}}@keyframes dots-data-v-5f0b9ba1{0%,20%{color:rgba(0,0,0,0);text-shadow:0.25em 0 0 rgba(0,0,0,0),0.5em 0 0 rgba(0,0,0,0)}40%{color:#8492A6;text-shadow:0.25em 0 0 rgba(0,0,0,0),0.5em 0 0 rgba(0,0,0,0)}60%{text-shadow:0.25em 0 0 #8492A6,0.5em 0 0 rgba(0,0,0,0)}80%,100%{text-shadow:.25em 0 0 #8492A6, .5em 0 0 #8492A6}}@keyframes recording-data-v-5f0b9ba1{0%{box-shadow:0px 0px 5px 0px rgba(173,0,0,0.3)}65%{box-shadow:0px 0px 5px 5px rgba(173,0,0,0.3)}90%{box-shadow:0px 0px 5px 5px rgba(173,0,0,0)}}body[data-v-5f0b9ba1]{margin:0;font-size:100%;color:#3C4858}a[data-v-5f0b9ba1]{text-decoration:none;color:#45C8F1}h1[data-v-5f0b9ba1],h2[data-v-5f0b9ba1],h3[data-v-5f0b9ba1],h4[data-v-5f0b9ba1]{margin-top:0}svg[data-v-5f0b9ba1]{outline:none}.container_selected_area[data-v-5f0b9ba1]{display:none;visibility:hidden;padding:0;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2147483647}.container_selected_area.active[data-v-5f0b9ba1]{visibility:visible;display:block}.container_selected_area .label[data-v-5f0b9ba1]{font-family:"Didact Gothic Regular",sans-serif;font-size:22px;text-align:center;padding-top:15px}.container_selected_area .area[data-v-5f0b9ba1]{display:none;position:fixed;z-index:2147483647;border:1px solid #1e83ff;background:rgba(30,131,255,0.1);box-sizing:border-box}.container_selected_area .area.active[data-v-5f0b9ba1]{display:block;top:0;left:0}.hide[data-v-5f0b9ba1]{display:none}
+</style></head>
+<body>  
+
+
+
+
+
+
+
+
+	<noscript>
+		<div class="noscript_css">
+               <p>JavaScript is disabled on your browser.Please enable JavaScript to get full benifit  of e-Tenders.</p>
+		</div>
+	</noscript>
+ <div id="hld">  
+    <!-- container start -->
+   <div id="container">  <style>
+#header .dd_menu {
+    background: #FFA343 none repeat scroll 0 0;
+    border: 1px solid #FFA343;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 35px;
+    list-style-type: none;
+    margin: 5px 0 15px;
+    padding: 0;
+    width: 100%;
+    z-index: 2;
+}
+#header .dd_menu li:hover ul 
+{ 
+	left:0px; 
+	top:35px;
+	background:#92C05D;
+	/*border: 1px solid #ccc;*/
+	padding:3px; z-index:2; 
+	cursor:pointer;
+}
+#header{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+</style>
+<div id="header">
+<div id="header_logo">
+	<a href="">
+		<img border="0" src="ad.png" width="100%" height="120px">
+	</a> 
+</div>
+<script type="text/javascript" src="./Home_files/clock.js.download"></script>			
+<script type="text/javascript">
+
+/* <!-- set up variables used to init clock in BODY's onLoad handler; should be done as early as possible */
+var clockLocalStartTime = new Date();
+var dt = '2022/03/08 21:25:41';
+var clockServerStartTime = new Date(Date.parse(dt,"Y/m/d H:i:s"));
+
+ $(window).load(
+  function()
+    {	
+	  
+	clockInit(clockLocalStartTime, clockServerStartTime);
+	clockOnLoad();
+});
+
+
+
+
+
+$(document).ready(function()
+{ 
+	$('#only_certificate').bind('change', function ()
+	{
+	   	if ($(this).is(':checked'))
+	   	{
+		   $('#password').attr('disabled',true);
+		   $('#password').css('background-color','#C8BBBE');
+		   $('#password').val('');
+		}
+	   	else{
+	   		$('#password').attr('disabled',false);
+	   		$('#password').css('background-color','#FFFFFF');
+	   	}
+    });  
+		var login_type_error = document.getElementById("login_type_error").value;
+	var nomatch = document.getElementById("nomatch").value;
+	var enterusername = document.getElementById("enterusername").value;
+	var enterpassword = document.getElementById("enterpassword").value;
+		$(".login_box").show(); 
+    $(".login_box_show_hide").show(); 
+});
+
+	</script> 
+ 
+
+<div style="float:right; padding-bottom:0px;"> 
+<div style="float:right;  padding-bottom:0px;">
+</div>
+<div class="login_box" style=" position: absolute;
+        top: 0px;
+        right: 0px;">
+<form id="frmlogin" name="frmlogin" method="post" action="https://mahametrorail.etenders.in/banks/detail/mahametrorail/OQ==/">
+	<table border="0" style="text-align: left;">
+		<tbody><tr valign="top">
+			<td colspan="3">
+													</td>
+		 <input type="hidden" value="login" id="form_type" name="form_type"> 
+		 <input type="hidden" value="" id="login_type_error" name="login_type_error"> 
+		 <input type="hidden" value="" id="nomatch" name="nomatch"> 
+		 <input type="hidden" value="" id="enterusername" name="enterusername"> 
+		 <input type="hidden" value="" id="enterpassword" name="enterpassword"> 
+		</tr>
+			<input type="hidden" name="data[User][bdb]" value="OQ==" id="UserBdb">		<tr>
+			<td style="padding: 0px 0px 0px 4px;" valign="top" width="145px"><span><b>Username</b></span>
+				<input name="data[User][username]" type="text" id="username" class="textbox_login" value=""> 
+					 			</td> 
+			<td style="padding: 0px 0px 0px 3px;" valign="top" width="145px"><span><b>Password</b></span>
+				<input type="password" name="data[User][password]" id="password" class="textbox_login" style="background-color:#FFFFFF" value="">								</td>
+			<td width="120px" style="padding: 15px 0px 0px 8px;">
+			 <input type="submit" name="loginsubmit" id="loginsubmit" class="button mid_login" value="Login">
+			 <div style="display:none;">
+			<input type="hidden" name="data[only_certificate]" id="only_certificate_" value="0"><input type="checkbox" name="data[only_certificate]" class="checkbox" id="only_certificate" value="1">			<label for="only_certificate">Login using username and certificate</label>
+			</div>
+			<table style="float:right">
+						<tbody><tr>
+						<td><div id="disconnected_socket" style="background-color: red; border-radius: 7px; height: 7px; width: 7px;"></div> </td>
+						<td><div id="connected_socket" style="background-color:green;border-radius:7px;height: 7px;width:7px;display:none;"></div> </td>
+						</tr>
+						</tbody></table>
+			 </td>
+		</tr>
+		
+		<tr>
+			<td colspan="2">
+			<center>
+			<div id="other_portalLink" style="display:none"> 
+			</div>
+			</center>
+			</td>
+		</tr>
+		 
+		<tr valign="top">
+			<td colspan="3">
+				&nbsp;<a href="forget.html">Forgot your password?</a>&nbsp;&nbsp;&nbsp;	 <a href="MAHAMETRORAIL e-Procurement.html">New User Registration</a>			</td>
+		</tr>
+		<tr valign="top">
+			<td colspan="3">
+				&nbsp;<img border="0" src="./Home_files/email.png" width="20px" height="20px"><b> support.hackathontenders.com</b>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<img border="0" src="./Home_files/phone.png" width="20px" height="20px"><b>  0712-XXXXXX</b>
+			</td>
+		</tr>		
+	</tbody></table>
+		</form>
+</div>
+</div> 
+ 
+	
+<ul class="dd_menu" style="margin-top: 75px;">
+    <li><a href="Home.html">Home</a></li>
+    <li><a href="Tender.html">Tenders</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="MAHAMETRORAIL e-Procurement.html">Register</a></li>
+  <li class="right"><a href="#about">About</a></li>
+
+ 
+	
+			
+	
+	<!--li class="li_center"><a href="#" class="">Digital Certificate</a>
+		<ul>
+			<li class="li_left"><a href="#" class="">Department</a>
+				 
+					<ul>
+						<li class="li_left">
+							<a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/Department_DC_form_and_procedure.pdf" class="">Digital certificate form and procedure</a>
+						</li>
+					</ul>
+				 
+			</li>
+			
+			<li class="li_left"><a href="#" class="">Bidder</a>
+					 
+					<ul>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/Procedure_for_Digital_Certificate_Vendor.pdf" class="">Procedure for Certificate enrolment</a>
+							</li>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/SifyClass2IndividualSigningEncryption1Year.pdf" class="">One year form</a>
+							</li>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/SifyClass2IndividualSigningEncryption2Year.pdf" class=""> Two year form</a>
+							</li>
+				</ul>
+					 
+			</li>
+		</ul>	
+	</li-->
+	
+	 
+			
+				
+			<!--li class="li_left"><a href="#" class="">Department</a>
+				 
+					<ul>
+						<li class="li_left">
+							<a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/Department_DC_form_and_procedure.pdf" class="">Digital certificate form and procedure</a>
+						</li>
+					</ul>
+				 
+			</li-->
+			
+			<!--li class="li_left"><a href="#" class="">Bidder</a>
+					 
+					<ul>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/Procedure_for_Digital_Certificate_Vendor.pdf" class="">Procedure for Certificate enrolment</a>
+							</li>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/SifyClass2IndividualSigningEncryption1Year.pdf" class="">One year form</a>
+							</li>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/Digital_certificate_form/SifyClass2IndividualSigningEncryption2Year.pdf" class=""> Two year form</a>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/home_page_document/Tender Forms.zip" class="">Tender Form</a>
+							<li class="li_left"><a target="_blank" href="https://mahametrorail.etenders.in/home_page_document/RTI.pdf" class="">RTI</a>
+							</li>
+				</ul>
+					 
+			</li-->
+	 <li style="float:right;">
+		<div id="" style=" margin-top:4px; margin-right:7px; background: #F1F1F1; padding:3px; float:left; border:1px solid #fff; height:20px; width:215px; font-size:14px; color: #292953; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; ">
+			Date Time: <div style="padding:1px; float:right;" id="DateClockTime_HOME_PAGE_TIME">8/03/2022 21:29:42</div>
+		</div> 
+	</li>
+</ul>
+
+<div id="marqueedt">
+ <br>
+ <br>
+</div> </div>
+<script type="text/javascript" src="./Home_files/jWebSocket.js.download"></script><script type="text/javascript" src="./Home_files/NxtClientUtils.js.download"></script><style type="text/css" media="screen">
+ 
+.sign_in
+{
+	background-color:#FFFFFF;
+	border:solid 1px #5ea0c1;
+	padding:6px;
+}
+#main
+{
+	height:500px;
+}
+ 
+.clear {
+	clear: both;
+}
+.slider1Image span strong {
+   font-size: 14px;
+}
+.left {
+	 
+	top: 0;
+    left: 0;
+	width: 110px !important;
+	height: 245px;
+}
+.right {
+ 
+	right: 0;
+	bottom: 0;
+	width: 90px !important;
+	height: 245px;
+}
+ul { list-style-type: none;}
+#lbl{
+background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ffb547;
+    border-radius: 6px;
+	margin-bottom : 4px;
+    padding: 3px;
+}
+.thismon{
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+    background-image: -moz-linear-gradient(top, #f2f2f2, #fff);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00f2f2f2, endColorstr=#efefef)";
+    background-image: -moz-linear-gradient(top, #f2f2f2, #fff);
+    background-image: -ms-linear-gradient(top, #f2f2f2, #fff);
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #fff);
+    background-image: -o-linear-gradient(top, #f2f2f2, #fff);
+    border: 1px solid #d7d7d7;
+}
+
+.thisday{
+    color: #000;
+    border: 1px solid #595900;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+.calendar{
+ background: none repeat scroll 0 0 #c8d9f2;
+    border: 1px solid #d7d7d7;
+    display: none;
+    margin-left: 165px;
+    margin-top: 5px;
+    position: absolute;
+    width: 260px;
+    z-index: 2147483647;
+	}
+.calendar1{
+    background: none repeat scroll 0 0 #c8d9f2;
+    border: 1px solid #c8d9f2;
+    display: none;
+    margin-left: 41px;
+    margin-top: 5px;
+    position: absolute;
+    width: 260px;
+    z-index: 2147483647;
+}
+.navigate{
+    text-align: center;
+    cursor: pointer;
+}
+
+input{
+ border: 1px solid #4e8b98;
+ height: 18px; 
+}
+
+.weekdays{
+    font: normal bold 13px sans-serif;
+    color: #555555;
+}
+
+.monthdisp{
+    color: #555555;
+    font: normal bold 14px/30px sans-serif;
+    background-image: -moz-linear-gradient(top, #f2f2f2, #fff);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2f2f2, endColorstr=#efefef)";
+       background-image: -ms-linear-gradient(top, #f2f2f2, #fff);
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #fff);
+    background-image: -o-linear-gradient(top, #f2f2f2, #fff);
+    border: 0px solid #d7d7d7;
+}
+.endd
+{
+padding-right:12px;
+}
+input.textboxnew {
+    background: none repeat scroll 0 0 #fefefe;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    color: #333;
+    font-family: "Lucida Grande",Verdana,sans-serif;
+    font-size: 13px;
+    height: 18px;
+    padding: 3px;
+    vertical-align: middle;
+    width: 125px;
+}
+blink, .blink {
+  -webkit-animation: blink 1s step-end infinite;
+  -moz-animation: blink 1s step-end infinite;
+  -o-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  67% { opacity: 0 }
+}
+
+@-moz-keyframes blink {
+  67% { opacity: 0 }
+}
+
+@-o-keyframes blink {
+  67% { opacity: 0 }
+}
+
+@keyframes blink {
+  67% { opacity: 0 }
+}
+.tr{
+	background-color:#ffa343 ;
+}
+</style>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: wheat;
+    border: 1px solid #888;
+    height: 300px;
+    margin: auto;
+    padding: 92px 20px 20px;
+    width: 50%;
+}
+
+#div1 h3{
+	color:black !important;
+	font-weight:bold;
+}
+#div2 h3{
+	color:black !important;
+	font-weight:bold;
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+
+<!-- JavaScripts-->
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.jse"></script>-->
+<script type="text/javascript" src="./Home_files/s3Slider.js.download"></script>
+ 
+
+<script type="text/javascript">
+function checkdates()
+{
+	var start= document.getElementById('search_stard_dt1').value;
+	var end= document.getElementById('search_stard_dt2').value;
+
+	if(start!="" && end=="")
+	{
+	   alert("Please enter Start Date");
+	   return false;
+	}
+	if(end!="" && start=="" )
+	{
+	   alert("Please Enter Last Start Date");
+	  return false;
+	}
+}
+
+$(document).ready(function()
+{ 
+	connect();
+	setTimeout(function(){ $("#btn_select_certificates").click(); }, 500);
+	$("#calendar").mouseleave(function() {
+	$("#calendar").hide();
+	});	
+	$("#calendar1").mouseleave(function() {
+	$("#calendar1").hide();
+	});	
+
+	// searchresult(surl,'','');
+	$('#auction_date').datetimepicker({showButtonPanel:true,showHour:false,showMinute:false,showTime:false,timeFormat:"",dateFormat:'dd-mm-yy'});
+	
+	//NxtDate.dateTime('search3');
+		
+	var post_set_search_type = document.getElementById('post_set_search_type').value;
+	 
+	if(post_set_search_type=='online_tenders' || post_set_search_type=='')
+	{		 
+		document.getElementById('post_set_search_type').value='online_tenders' ;
+		$('#rad1').attr('checked', true);
+		$('#rad2').attr('checked', false);
+		$('#rad3').attr('checked', false);
+		document.getElementById('poo1').style.display 	= 'inline';
+		document.getElementById('poo2').style.display 	= 'inline';
+		document.getElementById('po1').style.display 	= 'none';
+		document.getElementById('po2').style.display 	= 'none';
+	}
+	if(post_set_search_type=='offline_tenders')
+	{		 
+		$('#rad2').attr('checked', true);
+		$('#rad1').attr('checked', false);
+		$('#rad3').attr('checked', false);
+		document.getElementById('poo1').style.display 	= 'inline';
+		document.getElementById('poo2').style.display 	= 'inline';
+		document.getElementById('po1').style.display 	= 'none';
+		document.getElementById('po2').style.display 	= 'none';
+	}
+	if(post_set_search_type=='po_award')
+	{		 
+		$('#rad3').attr('checked', true);
+		$('#rad2').attr('checked', false);
+		$('#rad1').attr('checked', false);
+		document.getElementById('po1').style.display 	= 'inline';
+		document.getElementById('po2').style.display 	= 'inline';
+		document.getElementById('poo1').style.display 	= 'none';
+		document.getElementById('poo2').style.display 	= 'none';
+	}
+});
+
+ function search_tenders()
+ {
+	var checked_site_radio = $('input:radio[name=tabGroup1]:checked').val();
+ }
+ function set_search_type(type)
+ {
+	document.getElementById('post_set_search_type').value=type;
+	if(type=='online_tenders')
+	{		 
+		$('#rad1').attr('checked', true);
+		$('#rad2').attr('checked', false);
+		$('#rad3').attr('checked', false);
+		document.getElementById('poo1').style.display 	= 'inline';
+		document.getElementById('poo2').style.display 	= 'inline';
+		document.getElementById('po1').style.display 	= 'none';
+		document.getElementById('po2').style.display 	= 'none';
+	}
+	if(type=='offline_tenders')
+	{		 
+		$('#rad2').attr('checked', true);
+		$('#rad1').attr('checked', false);
+		$('#rad3').attr('checked', false);
+		document.getElementById('poo1').style.display 	= 'inline';
+		document.getElementById('poo2').style.display 	= 'inline';
+		document.getElementById('po1').style.display 	= 'none';
+		document.getElementById('po2').style.display 	= 'none';
+	}
+	if(type=='po_award')
+	{		 
+		$('#rad3').attr('checked', true);
+		$('#rad2').attr('checked', false);
+		$('#rad1').attr('checked', false);
+		document.getElementById('po1').style.display 	= 'inline';
+		document.getElementById('po2').style.display 	= 'inline';
+		document.getElementById('poo1').style.display 	= 'none';
+		document.getElementById('poo2').style.display 	= 'none';
+	}
+ }
+ 
+</script>
+ <script>
+  var getDatee = new Date();
+	var monthe = getDatee.getMonth();
+	var yeare = getDatee.getFullYear();
+	var day = getDatee.getDate(); 
+	function isEmpty(val){
+	   return (val === undefined || val == null || val.length <= 0) ? true : false;
+	}
+	function prev()
+	{
+		monthe = monthe-1;
+		if(monthe < 0)
+		{
+			yeare = yeare-1;	
+			monthe = 11;
+		}
+		dispCal(monthe, yeare);
+		return false;
+	}
+	
+	function next()
+	{
+		monthe = monthe+1;
+		if(monthe > 11)
+	{
+		yeare = yeare+1;	
+			monthe = 0;
+		}
+		dispCal(monthe, yeare);
+		return false;
+	}
+	
+	function daysInMonth(monthe, yeare)
+	{
+		return 32 - new Date(yeare, monthe, 32).getDate();
+	}
+
+	function getElementPosition(arrName,arrItem){
+		for(var pos=0; pos<arrName.length; pos++ ){
+			if(arrName[pos]==arrItem){
+				return pos;
+			}
+		}
+	}
+	
+	function setVal(getDat){
+		$('#search_stard_dt1').val(getDat);
+		$('#calendar').hide();
+	}
+	
+	function dispCal(mon,yea){
+		   
+		var ar = new Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+                var chkEmpty = isEmpty(mon);
+                var n,days,calendar,startDate,newYea,setvale,i;
+                if(chkEmpty != true){
+                    mon = mon+1;
+                    n = ar[mon-1];
+                    n += " "+yea;
+                    newYea = yea;
+                    days = daysInMonth((mon-1),yea);
+                    startDate = new Date(ar[mon-1]+" 1"+","+parseInt(yea));
+                }else{
+                    mon = getElementPosition(ar,ar[getDatee.getMonth()]);
+                    n = ar[getDatee.getMonth()];
+                    n += " "+yeare;
+                    newYea = yeare;
+                    days = daysInMonth(mon,yeare);
+                    startDate = new Date(ar[mon]+" 1"+","+parseInt(yeare));
+                }
+                
+                var startDay = startDate.getDay();
+                var startDay1 = startDay;
+                while(startDay> 0){
+                   calendar += "<td></td>";  
+                   startDay--;
+                }                
+                i = 1;
+                while (i <= days){
+                  if(startDay1 > 6){
+                      startDay1 = 0;  
+                      calendar += "</tr><tr>";  
+                  }  
+                  mon = monthe+1;
+                  setvale = i+","+n;
+		  if(i == day && newYea==yeare && mon==monthe){
+		    calendar +="<td class='thisday' onclick='setVal(\""+i+"-"+mon+"-"+newYea+"\")'>"+i+"</td>";
+                  }else{  
+                    calendar +="<td class='thismon' onclick='setVal(\""+i+"-"+mon+"-"+newYea+"\")'>"+i+"</td>";   
+                  }
+		  startDay1++;  
+                  i++;  
+                }
+		    calendar +="<td><a style='font-size: 9px; color: #efefef; font-family: arial; text-decoration: none;' href='http://www.hscripts.com'>&copy;h</a></td>";   
+		
+                $('#calendar').css('display','block');
+                $('#month').html(n);
+                var test = "<tr class='weekdays'><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>";  
+                test += calendar;
+		$('#dispDays').html(test);
+	}
+ </script>
+     <script type="text/javascript">
+            var getDatee = new Date();
+            var monthe = getDatee.getMonth();
+            var yeare = getDatee.getFullYear();
+            var day = getDatee.getDate(); 
+            function isEmpty(val){
+               return (val === undefined || val == null || val.length <= 0) ? true : false;
+            }
+            
+            function prevn()
+            {
+            	monthe = monthe-1;
+                if(monthe < 0)
+        	{
+        	    yeare = yeare-1;	
+                    monthe = 11;
+                }
+                dispCaln(monthe, yeare);
+                return false;
+            }
+            
+            function nextn()
+            {
+            	monthe = monthe+1;
+                if(monthe > 11)
+        	{
+        	    yeare = yeare+1;	
+                    monthe = 0;
+                }
+                dispCaln(monthe, yeare);
+                return false;
+            }
+            
+            function daysInMonth(monthe, yeare)
+            {
+                return 32 - new Date(yeare, monthe, 32).getDate();
+            }
+
+            function getElementPosition(arrName,arrItem){
+                for(var pos=0; pos<arrName.length; pos++ ){
+                    if(arrName[pos]==arrItem){
+                        return pos;
+                    }
+                }
+            }
+            
+            function setValn(getDat){  
+			
+                $('#search_stard_dt2').val(getDat);
+				// $('#search_stard_dt1').val(getDat);
+				//alert(getDat);
+                $('#calendar1').hide();
+            }
+            
+            function dispCaln(mon,yea){
+			
+		        var ar = new Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+                var chkEmpty = isEmpty(mon);
+                var n,days,calendar1,startDate,newYea,setvale,i;
+                if(chkEmpty != true){
+                    mon = mon+1;
+                    n = ar[mon-1];
+                    n += " "+yea;
+                    newYea = yea;
+                    days = daysInMonth((mon-1),yea);
+                    startDate = new Date(ar[mon-1]+" 1"+","+parseInt(yea));
+                }else{
+                    mon = getElementPosition(ar,ar[getDatee.getMonth()]);
+                    n = ar[getDatee.getMonth()];
+                    n += " "+yeare;
+                    newYea = yeare;
+                    days = daysInMonth(mon,yeare);
+                    startDate = new Date(ar[mon]+" 1"+","+parseInt(yeare));
+                }
+                
+                var startDay = startDate.getDay();
+                var startDay1 = startDay;
+                while(startDay> 0){
+                   calendar1 += "<td></td>";  
+                   startDay--;
+                }                
+                i = 1;
+                while (i <= days){
+                  if(startDay1 > 6){
+                      startDay1 = 0;  
+                      calendar1 += "</tr><tr>";  
+                  }  
+                  mon = monthe+1;
+                  setvale = i+","+n;
+				if(i == day && newYea==yeare && mon==monthe){
+				calendar1 +="<td class='thisday' onclick='setValn(\""+i+"-"+mon+"-"+newYea+"\")'>"+i+"</td>";
+                  }else{  
+                    calendar1 +="<td class='thismon' onclick='setValn(\""+i+"-"+mon+"-"+newYea+"\")'>"+i+"</td>";   
+                  }
+					startDay1++;  
+					i++;  
+                }
+		    calendar1 +="<td><a style='font-size: 9px; color: #efefef; font-family: arial; text-decoration: none;' href='http://www.hscripts.com'>&copy;h</a></td>";   
+		
+                $('#calendar1').css('display','block');
+                $('#monthn').html(n);
+                var test = "<tr class='weekdays'><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>";  
+                test += calendar1;
+				$('#dispDaysn').html(test);
+            }
+			
+	
+
+        </script>
+		
+ <style>
+.fluid_container 
+{
+	margin: 0 auto; 
+	width: 958px;
+	height: 305px;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+		 
+}
+
+</style>
+
+<script type="text/javascript" src="./Home_files/jquery.min.js.download"></script>
+    <script type="text/javascript" src="./Home_files/jquery.mobile.customized.min.js.download"></script>
+    <script type="text/javascript" src="./Home_files/jquery.easing.1.3.js.download"></script>  
+<script>
+		/*jQuery(function(){ 
+			jQuery('#camera_wrap_1').camera({
+				thumbnails: true
+			}); 
+		});
+		*/
+		
+	function cleartextbox()
+    {
+     
+     window.location.href = 'https://mahametrorail.etenders.in'
+    }	
+
+</script>
+  
+ <a href="https://mahametrorail.etenders.in/home_page_document/NXTCryptoServiceSetup.msi" download="" id="download" hidden=""></a>
+
+ <input type="hidden" name="check_socket_server_conect" id="check_socket_server_conect" value="NO">
+	
+	<input style="display:none;" type="button" name="btn_select_certificates" id="btn_select_certificates" class="nxt_btn_green nxt-btn nxt-btn-green nxt-btn-more" value="Select certificate to login" onclick="getallcertificates();">
+	
+	<!-- Trigger/Open The Modal -->
+<button id="myBtn" style="display:none;">Open Modal</button>
+
+
+  
+
+</div>
+		<div align="top-right" >
+			
+			 <marquee behavior="" onmouseover="this.setAttribute(&#39;scrollamount&#39;, 0, 0);" onmouseout="this.setAttribute(&#39;scrollamount&#39;, 3, 0);" scrollamount="3"> 
+						
+			 </marquee>
+			</div>
+		<div class="search_div" style="font-size:13px;">  
+			<form name="frmSearch" id="frmSearch" method="post" onsubmit="return checkdates();">
+				<table style="width:100%">
+					<tbody><tr style="vertical-align: middle;">
+						<td>Tender Ref.No.</td>
+						<td>
+						 <input name="search_tender_no" id="search_tender_no" title="" class="textboxnew" type="text" value="">
+						</td>
+						<td>Tender Description</td>
+						<td>
+						<input name="search_tender_desc" id="search_tender_desc" title="" class="textboxnew" type="text" value="">
+						</td>
+						<td>Department</td>
+						<td>
+												 
+						 <select name="search_tender_dept" id="search_tender_dept"><option value="select">--select--</option><option value="6">-----</option><option value="7">-----</option></select>						 
+						  
+						
+						</td>
+						
+                       <td>
+					       <div align="center">
+                          Start Date &lt;= <input type="text" readonly="readonly" name="search_stard_dt1" id="search_stard_dt1" style="width:125px;height:20px;" onclick="dispCal()" size="10" value="" placeholder="dd/mm/yy">
+	                       <img src="./Home_files/calendar.png" onclick="dispCal()" style="cursor: pointer; vertical-align: middle;">
+                            <table class="calendar" id="calendar" border="0" cellpadding="0" cellspacing="0"> 
+                            <tbody><tr class="monthdisp">
+							
+                            <td class="navigate" align="left"><img src="./Home_files/previous.png" onclick="return prev()"></td>
+                            <td align="center" id="month"></td>
+                            <td class="navigate" align="right"><img src="./Home_files/next.png" onclick="return next()"></td>
+                             </tr>
+                             <tr>
+                             <td colspan="3">
+                            <table id="dispDays" border="0" cellpadding="4" cellspacing="4">                        
+                            </table>                    
+                             </td>
+                            </tr>
+                           </tbody></table>
+                           </div>
+					   
+					   </td>
+					   <td>
+						  <div align="center">
+						  Last Date
+								&gt;= <input type="text" readonly="readonly" id="search_stard_dt2" class="endd" name="search_stard_dt2" style="width:125px;height:20px;" onclick="dispCaln()" size="10" value="" placeholder="dd/mm/yy">
+							<img src="./Home_files/calendar.png" onclick="dispCaln()" style="cursor: pointer; vertical-align: middle;">
+								<table class="calendar1" id="calendar1" border="0" cellpadding="0" cellspacing="0">
+									<tbody><tr class="monthdisp">
+										<td class="navigate" align="left"><img src="./Home_files/previous.png" onclick="return prevn()"></td>
+										<td align="center" id="monthn"></td>
+										<td class="navigate" align="right"><img src="./Home_files/next.png" onclick="return nextn()"></td>
+										</tr>
+									<tr>
+										<td colspan="3">
+											<table id="dispDaysn" border="0" cellpadding="4" cellspacing="4">                        
+											</table>                    
+										</td>
+									</tr>
+								</tbody></table>
+								</div>
+					   </td>
+					  
+						<td id="poo1" style="display: inline;"> 
+						</td>
+						<td id="poo2" style="display: inline;"> 
+						</td>
+						<td style="vertical-align: top;">
+						<input type="submit" class="button mid_login" name="search" value="Search" alt="Search" style="height:25px; padding:2px 5px;" title="Subscribe">
+						<input type="button" name="clear" value="Clear" alt="clear" class="button mid_login" style="height:25px; padding:2px 5px;" title="Clear" onclick="cleartextbox();">
+						
+						</td> 
+					</tr>
+					
+				</tbody></table>
+				<input type="hidden" name="post_set_search_type" id="post_set_search_type" value="online_tenders">
+			</form>
+		</div>
+  
+	<div class="tabGroup">
+		<input type="radio" name="tabGroup1" id="rad1" onclick="set_search_type(&#39;online_tenders&#39;)" class="tab1" checked="checked" value="tab1">
+		<label for="rad1">Online Tenders </label>
+	 
+		<!--input type="radio" name="tabGroup1" id="rad2" onclick="set_search_type('offline_tenders')" class="tab2" value="tab2"/>
+		<label for="rad2">Corrigendum </label-->
+		 
+		<br>
+		<div class="tab1" style="min-height:250px;overflow-y:scroll;">
+		<!--div id="lbl"><b>  9 Live Tender(s) Found</b></div-->	 
+		<div style="border:0px solid;width:auto;" class="CSSTableGenerator">
+							 
+			<table cellpadding="2" border="0" cellspacing="2" width="100%">
+			<!--<tr  style="background:#c8d9f2 !important;color:#000;height:35px;">-->
+			<tbody><tr style="background:#ffa343 !important;">
+				<td align="left" width="5%">Tender No.</td>
+				<td align="left" width="20%">Tender Ref.No.</td>
+				<td align="left" width="10%">Tender Type</td>
+				<td align="left" width="10%">Department</td>
+				<td align="left" width="35%">Tender Description</td>
+				<td align="left" width="15%">Last Date/Time</td>
+				<td align="left" width="20%">Corrigendum Document</td>
+				<!--<td align="left">Quick Link</td>
+				<td align="left">Prebid Report</td>-->
+			</tr>
+			  					<tr style="border-top:1px dashed #c9c8c8;height:40px;border-bottom:1px dashed #c9c8c8 ;">
+						<td align="left">
+													</td>
+						 <td align="left"> 
+							<a href=""></a>
+						</td>
+						  <td align="left">
+						
+						</td>
+						<td>
+											</td>
+						<td align="left">
+							 
+						</td>
+						<td>
+						
+							<blink><font color="red"><br> </font></blink>	
+							
+						</td>
+						<td align="left">
+							<b></b><a href="">1</a>							 <ul></ul> <a href="" target="_blank"></a><br>  
+						</td>
+						
+					</tr>
+									<tr style="border-top:1px dashed #c9c8c8;height:40px;border-bottom:1px dashed #c9c8c8 ;">
+						<td align="left">
+												</td>
+						 <td align="left"> 
+							<a href="https://mahametrorail.etenders.in/indexes/tender_details/Mjg0"></a>
+						</td>
+						  <td align="left">
+						
+						</td>
+						<td>
+												</td>
+						<td align="left">
+							  
+							  
+						</td>
+						<td>
+						
+						<blink><font color="red"><br> </font></blink>	
+							
+						</td>
+						<td align="left">
+														 <ul></ul> 
+						</td>
+						
+					</tr>
+									<tr style="border-top:1px dashed #c9c8c8;height:40px;border-bottom:1px dashed #c9c8c8 ;">
+						<td align="left">
+							 					</td>
+						 <td align="left"> 
+							<a href="https://mahametrorail.etenders.in/indexes/tender_details/Mjgy"></a>
+						</td>
+						  <td align="left">
+						 
+						</td>
+						<td>
+												</td>
+						<td align="left">
+							  
+							 
+						</td>
+						<td>
+						
+							 <blink><font color="red"><br> </font></blink>	
+							
+						</td>
+						<td align="left">
+														 <ul></ul> 
+						</td>
+						
+					</tr>
+									<tr style="border-top:1px dashed #c9c8c8;height:40px;border-bottom:1px dashed #c9c8c8 ;">
+						<td align="left">
+												</td>
+						 <td align="left"> 
+							<a href="https://mahametrorail.etenders.in/indexes/tender_details/Mjc5"></a>
+						</td>
+						  <td align="left">
+							
+						</td>
+						<td>				</td>
+						<td align="left">
+							 
+						</td>
+						<td>
+						
+							<blink><font color="red"><br> </font></blink>	
+							
+						</td>
+						<td align="left">
+														 <ul></ul> <a href="https://mahametrorail.etenders.in/tender_document/tender_279/corrigendum_doc/279_CorrigendumII.pdf" target="_blank"></a><br>  <a href="https://mahametrorail.etenders.in/tender_document/tender_279/corrigendum_doc/279_CorrigendumI.pdf" target="_blank"></a><br>  <a href="https://mahametrorail.etenders.in/tender_document/tender_279/corrigendum_doc/279_VCLinkPreBidMeeting.docx" target="_blank"></a><br>  
+						</td>
+						
+					</tr>
+									<tr style="border-top:1px dashed #c9c8c8;height:40px;border-bottom:1px dashed #c9c8c8 ;">
+						<td align="left">
+							 						</td>
+						 <td align="left"> 
+							<a href="https://mahametrorail.etenders.in/indexes/tender_details/MjY0"></a>
+						</td>
+						  <td align="left">
+							
+						</td>
+						<td>
+											</td>
+						<td align="left">
+							 
+						</td>
+						<td>
+						
+							<blink><font color="red"><br></font></blink>	
+							
+						</td>
+						<td align="left">
+							<b> : </b><a href=""></a>							 <ul></ul> <a href="" target="_blank"></a><br>  <a href=" target="_blank"></a><br>  <a href="" target="_blank"></a><br>  <a href=" target="_blank"></a><br>  <a href="h" target="_blank"></a><br>  <a href="" target="_blank"></a><br>  <a href="" target="_blank"></a><br>  <a href="" target="_blank"></a><br>  <a href="F" target="_blank"></a><br>  <a href="" target="_blank"></a><br>  
+						</td>
+						
+					</tr>
+									<tr style="border-top:1px dashed #c9c8c8;height:40px;border-bottom:1px dashed #c9c8c8 ;">
+						<td align="left">
+											</td>
+						 <td align="left"> 
+							<a href="https://mahametrorail.etenders.in/indexes/tender_details/MjYz"></a>
+						</td>
+						
+						
+					</tr>
+							</tbody></table>
+							 
+			</div>
+		 </div>
+		<!--div class="tab2" style="min-height:250px;overflow-y:scroll;"> 
+			<div style="border:0px solid;width:auto;" class="CSSTableGenerator">
+				 
+					 
+					 
+					 <table cellpadding="2" border="0" cellspacing="2" width="100%" >
+						<tr  style="background:#c8d9f2 !important;color:#000;height:35px;">
+							<td align="left">Tender ID</td>
+							<td align="left">Tender No.</td> 
+							<td align="left">Due Date/Time</td>
+							<td align="left">Corrigendum Document </td>
+						 
+							 
+						</tr>
+			
+										<tr  style="border-top:1px dashed #c9c8c8;height:40px;border-bottom:1px dashed #c9c8c8 ;">
+						<td   align="left" >
+						 258						</td>
+						 <td  align="left"> 
+							<a href="https://mahametrorail.etenders.in/indexes/tender_details/MjU4">N1PD-32/2021</a>
+						</td> 
+						<td  align="left">
+							 17/03/2022 16:00:00 
+						</td>
+						<td  align="left"> 
+						
+															 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/285_CorrigendumI.pdf" target="_blank">1. 285CorrigendumI.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumX.pdf" target="_blank">2. 263CorrigendumX.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumX.pdf" target="_blank">3. 264CorrigendumX.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/279_CorrigendumII.pdf" target="_blank">4. 279CorrigendumII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumIX.pdf" target="_blank">5. 263CorrigendumIX.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumIX.pdf" target="_blank">6. 264CorrigendumIX.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumX.pdf" target="_blank">7. 258CorrigendumX.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/279_CorrigendumI.pdf" target="_blank">8. 279CorrigendumI.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/279_VCLinkPreBidMeeting.docx" target="_blank">9. 279VCLinkPreBidMeeting.docx</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumVIII.pdf" target="_blank">10. 263CorrigendumVIII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumVIII.pdf" target="_blank">11. 264CorrigendumVIII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/262_CorrigendumVI.pdf" target="_blank">12. 262CorrigendumVI.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/261_CorrigendumVI.pdf" target="_blank">13. 261CorrigendumVI.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumIX.pdf" target="_blank">14. 258CorrigendumIX.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumVII.pdf" target="_blank">15. 263CorrigendumVII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumVII.pdf" target="_blank">16. 264CorrigendumVII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumVIII.pdf" target="_blank">17. 258CorrigendumVIII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/261_CorrigendumV.pdf" target="_blank">18. 261CorrigendumV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/262_CorrigendumV.pdf" target="_blank">19. 262CorrigendumV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumVI.pdf" target="_blank">20. 263CorrigendumVI.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumVI.pdf" target="_blank">21. 264CorrigendumVI.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumVII.pdf" target="_blank">22. 258CorrigendumVII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumV.pdf" target="_blank">23. 263CorrigendumV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumV.pdf" target="_blank">24. 264CorrigendumV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumVI.pdf" target="_blank">25. 258CorrigendumVI.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/262_CorrigendumIV.pdf" target="_blank">26. 262CorrigendumIV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/261_CorrigendumIV.pdf" target="_blank">27. 261CorrigendumIV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumIV.pdf" target="_blank">28. 263CorrigendumIV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumIV.pdf" target="_blank">29. 264CorrigendumIV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumV.pdf" target="_blank">30. 258CorrigendumV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/262_CorrigendumIII.pdf" target="_blank">31. 262CorrigendumIII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/261_CorrigendumIII.pdf" target="_blank">32. 261CorrigendumIII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/262_CorrigendumII.pdf" target="_blank">33. 262CorrigendumII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/261_CorrigendumII.pdf" target="_blank">34. 261CorrigendumII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_DCAVolII.pdf" target="_blank">35. 258DCAVolII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumIV.pdf" target="_blank">36. 258CorrigendumIV.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumIII.pdf" target="_blank">37. 264CorrigendumIII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumIII.pdf" target="_blank">38. 263CorrigendumIII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumII.pdf" target="_blank">39. 263CorrigendumII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumII.pdf" target="_blank">40. 264CorrigendumII.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumIII.PDF" target="_blank">41. 258CorrigendumIII.PDF</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumII.PDF" target="_blank">42. 258CorrigendumII.PDF</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_CorrigendumI.PDF" target="_blank">43. 263CorrigendumI.PDF</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_CorrigendumI.PDF" target="_blank">44. 264CorrigendumI.PDF</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/262_CorrigendumI.PDF" target="_blank">45. 262CorrigendumI.PDF</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/261_CorrigendumI.PDF" target="_blank">46. 261CorrigendumI.PDF</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/263_DCAVol02.pdf" target="_blank">47. 263DCAVol02.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/264_DCAVol02.pdf" target="_blank">48. 264DCAVol02.pdf</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/258_CorrigendumI.PDF" target="_blank">49. 258CorrigendumI.PDF</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/262_VCLinkPreBidMeeting.docx" target="_blank">50. 262VCLinkPreBidMeeting.docx</a><br/>
+																		 <a href="https://mahametrorail.etenders.in/tender_document/tender_/corrigendum_doc/261_VCLinkPreBidMeeting.docx" target="_blank">51. 261VCLinkPreBidMeeting.docx</a><br/>
+															</td>
+						</tr>
+										</table>
+			 
+			 </div>
+			 
+			 
+		</div-->
+		
+	</div> 
+ 	
+<script type="text/javascript">
+function afterUpdateCheck(aToken)
+		{
+			//alert(aToken.UpdateNeeded);
+			if(aToken.UpdateNeeded == "true")
+			{
+				//sendCommand("https://mahametrorail.etenders.in/updates/update_2.zip","Update",afterUpdate);
+				$('#div2').hide();
+                $('#myBtn').click(); 
+				
+					//alert("Provide link to dwonload the crypto service.");
+					//document.getElementById('download').click();
+
+				
+			}
+			
+			
+		}
+		function getallcertificates()
+		{
+			
+			var check_conn = document.getElementById("check_socket_server_conect").value;
+			if(check_conn == 'YES'){
+				$('#connected_socket').show();
+				sendCommand("https://mahametrorail.etenders.in/updates/update_2.zip","IsUpdateNeeded",afterUpdateCheck);	
+			}else{
+				$('#div1').hide();
+				$('#disconnected_socket').show();
+				$('#myBtn').click();
+			}
+		}
+</script>			 
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>	
+		 
+<div id="footer">
+<div style="float:right;">
+Copyright © 2022 hackathontenders eProcurement | Powered by DSATM
+<img src="./Home_files/logo.png" border="0">
+</a>
+</div>
+ <div style="float:left; width:52%; border:0px solid;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<a href=>Terms of Use</a><b class="pipe">|</b><a href=>Privacy Policy</a><b class="pipe">|</b><a href="">Contact Us</a><b class="pipe">|</b><a href=>Terms for Online Payments </a>	<div style="float:left;">	 
+	Best view in <b>1360x768</b> Resolution
+</div>	 
+</div>	 
+</div>    </div>    <!-- container ends -->
+	 
+
+    </div><div id="scrnli_recorder_root"></div>
+	 
+
+<div>
+    <div id="twoseven-ext-tab-media-modal" class="twoseven-ext-tab-media-modal" style="display: none;">
+      <!-- Modal content -->
+      <div class="twoseven-ext-tab-media-modal-content">
+        <div class="iframe-container" style="height: 100%; width: 100%;">
+          <span class="close">×</span>
+        </div>
+      </div>
+    </div></div><iframe src="./Home_files/audio-devices.html" allow="microphone" style="display: none;"></iframe><input type="file" id="" name="file" style="display: none;"><div data-v-5f0b9ba1="" class="container_selected_area" style="cursor: url(&quot;chrome-extension://ijejnggjjphlenbhmjhhgcdpehhacaal/assets/images/cursor-imagen.svg&quot;) 9 9, crosshair;"><div data-v-5f0b9ba1="" class="area"></div></div><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>

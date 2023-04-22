@@ -1,0 +1,80 @@
+var lWSC = null;
+var callbackFunction = null;
+function connect(url)
+{
+	if(!url)
+		url = "wss://nxtcrypto.etenders.in:8887";
+	if ("WebSocket" in window)
+	{
+		lWSC = new WebSocket(url);
+	}
+	lWSC.onopen = function()
+	{
+		console.log("Browser connected to socket server successfully");
+
+
+		document.getElementById("check_socket_server_conect").value = 'YES';	
+		
+		$('#socket_server_status').show();
+		$('#socket_server_status').html('<div style="float:right; font-size: 16px; font-weight: bold; color: #227755; padding-top:4px;">&nbsp;&nbsp;Service Enabled</h2></div><img align="middle" src="'+site_url+'/img/server_conection_green.png"  onclick="connect();"  style="float:right; vertical-align:middle; cursor:hand;" width="30px" height="33px"  />');
+		$('#socket_server_status_hed').show();
+		 $('#socket_server_status_hed').html('<div  class="header_menu_img help_box_show"  style="background: url('+site_url+'/img/server_conection_green.png) no-repeat; background-position: 23px 2px;"  > <div  class="header_menu_img_lbl help_box_show" >Service Enabled</div> </div> ');
+
+	}
+	lWSC.onmessage = function(e) {
+		console.log("Message from socket server received: "+e.data);
+		if(callbackFunction)
+		{
+			var aToken = e.data;
+			if (aToken)
+			{
+				aToken = eval("["+aToken+"]")[0];
+				callbackFunction(aToken);
+			}
+			else
+				callbackFunction(false);
+		}
+	}
+	lWSC.onclose = function() {
+		console.log("Message from socket server received: "+e.data);
+		document.getElementById("check_socket_server_conect").value = 'NO';
+		 $('#socket_server_status').show();
+		 $('#socket_server_status').html('<div style="float:right; font-size: 16px; color: #fc7370;  padding-top:4px;">&nbsp;&nbsp;Please Enable Service</h2></div><img align="middle" src="'+site_url+'/img/server_conection_red.png"  onclick="connect();"  style="float:right; vertical-align:middle; cursor:hand;" width="30px" height="33px"  />');
+
+		$('#socket_server_status_hed').show();
+		 $('#socket_server_status_hed').html('<div  class="header_menu_img help_box_show"  style="background: url('+site_url+'/img/server_conection_red.png) no-repeat; background-position: 23px 2px;"  > <div  class="header_menu_img_lbl help_box_show" >Service Disconnected</div> </div>');
+		lWSC = null;
+	}
+}
+
+function sendCommand(data, type, callbackFunc)
+{
+	/*var lMsg = eCmd.value;
+	console.log( "Sending command '" + lMsg + "'..." );
+	var lArgs = eArgs.value;
+	lArgs = lArgs.replace( /\"/g, "&22");
+	lArgs = lArgs.replace( /\=/g, "&3D");*/
+	if(!type)
+		type = 'getCertList';
+	try
+	{
+		// example how to exchange data with a server side listener
+		var lToken = {
+		  ns: "my.cryptography",
+		  type: type,
+		  data: data
+		};
+
+		lWSC.send(JSON.stringify(lToken));
+		callbackFunction = callbackFunc;
+
+	} catch( ex ) 
+	{
+		console.log( "Exception: " + ex.message );
+		if(ex.message.indexOf("connecting")!=-1)
+		{
+			connect();
+			sendCommand(data, type, callbackFunc);
+		}
+	}
+}
